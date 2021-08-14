@@ -5,7 +5,7 @@ import checkValidPoint from './checkValidPoint'
 
 /**
  * Return all points which touch on edges (not diagonal)
- * @function adjacentEdgePoints
+ * @function
  * @param {module:matrixObjects~Point} pnt - The point we want to find adjacent points for.
  * @param {module:matrixObjects~Matrix} matrix - The matrix having the point.
  * @returns {Array.<module:matrixObjects~Point>}

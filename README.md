@@ -110,6 +110,10 @@ array of all points captured for each line segment</p>
 <dt><a href="#randomStart">randomStart(length, dir, [lengthLimits])</a> ⇒ <code><a href="#module_matrixObjects..Point">Point</a></code></dt>
 <dd><p>Generate a random starting point for a line with the provided length and direction.</p>
 </dd>
+<dt><a href="#testPointsBetween">testPointsBetween(start, end, matrix, func, [inclusive])</a> ⇒ <code>Object.&lt;string, Array.&lt;module:matrixObjects~Point&gt;&gt;</code></dt>
+<dd><p>Given a start and end point, test the points between with the provided function. Return the points as part of true
+and / or false properties based on the test.</p>
+</dd>
 </dl>
 
 <a name="module_matrixDom"></a>
@@ -157,26 +161,6 @@ All of the functionalHelpers matrix functions for working with a grid of points.
 
 **Version**: 1.0.0  
 **Author**: Joshua Heagle <joshuaheagle@gmail.com>  
-
-* [matrixFunctions](#module_matrixFunctions)
-    * [~testPointsBetween(start, end, matrix, func, [inclusive])](#module_matrixFunctions..testPointsBetween) ⇒ <code>Object.&lt;string, Array.&lt;module:matrixObjects~Point&gt;&gt;</code>
-    * [~testPointStatus](#module_matrixFunctions..testPointStatus) ⇒ <code>boolean</code>
-
-<a name="module_matrixFunctions..testPointsBetween"></a>
-
-### matrixFunctions~testPointsBetween(start, end, matrix, func, [inclusive]) ⇒ <code>Object.&lt;string, Array.&lt;module:matrixObjects~Point&gt;&gt;</code>
-Given a start and end point, test the points between with the provided function. Return the points as part of trueand / or false properties based on the test.
-
-**Kind**: inner method of [<code>matrixFunctions</code>](#module_matrixFunctions)  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| start | [<code>Point</code>](#module_matrixObjects..Point) |  | The beginning point to check. |
-| end | [<code>Point</code>](#module_matrixObjects..Point) |  | The terminating point to check between. |
-| matrix | [<code>Matrix</code>](#module_matrixObjects..Matrix) |  | The grid of points all the points can exist on. |
-| func | [<code>testPointStatus</code>](#module_matrixFunctions..testPointStatus) |  | The test function which will return true or false. |
-| [inclusive] | <code>boolean</code> | <code>true</code> | Choose whether to include or exclude the start and end points in the results. |
-
 <a name="module_matrixFunctions..testPointStatus"></a>
 
 ### matrixFunctions~testPointStatus ⇒ <code>boolean</code>
@@ -420,7 +404,7 @@ Given two points, check the cells between using specified function.When inclusi
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ...args | <code>\*</code> | These args match the parameter list for [testPointsBetween](#module_matrixFunctions..testPointsBetween) |
+| ...args | <code>\*</code> | These args match the parameter list for [module:matrixFunctions~testPointsBetween](module:matrixFunctions~testPointsBetween) |
 
 <a name="checkValidPoint"></a>
 
@@ -634,4 +618,19 @@ Generate a random starting point for a line with the provided length and directi
 | length | <code>number</code> |  | The intended length the resulting line. |
 | dir | [<code>Direction</code>](#module_matrixObjects..Direction) |  | The direction the line will extend towards. |
 | [lengthLimits] | [<code>Point</code>](#module_matrixObjects..Point) | <code>{x: 10, y: 10, z: 10}</code> | The maximum grid size. |
+
+<a name="testPointsBetween"></a>
+
+## testPointsBetween(start, end, matrix, func, [inclusive]) ⇒ <code>Object.&lt;string, Array.&lt;module:matrixObjects~Point&gt;&gt;</code>
+Given a start and end point, test the points between with the provided function. Return the points as part of trueand / or false properties based on the test.
+
+**Kind**: global function  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| start | [<code>Point</code>](#module_matrixObjects..Point) |  | The beginning point to check. |
+| end | [<code>Point</code>](#module_matrixObjects..Point) |  | The terminating point to check between. |
+| matrix | [<code>Matrix</code>](#module_matrixObjects..Matrix) |  | The grid of points all the points can exist on. |
+| func | [<code>testPointStatus</code>](#module_matrixFunctions..testPointStatus) |  | The test function which will return true or false. |
+| [inclusive] | <code>boolean</code> | <code>true</code> | Choose whether to include or exclude the start and end points in the results. |
 

@@ -181,7 +181,7 @@
 
     /**
  * Return all points which touch on edges (not diagonal)
- * @function adjacentEdgePoints
+ * @function
  * @param {module:matrixObjects~Point} pnt - The point we want to find adjacent points for.
  * @param {module:matrixObjects~Matrix} matrix - The matrix having the point.
  * @returns {Array.<module:matrixObjects~Point>}
@@ -225,7 +225,7 @@
 
     /**
  * Return all valid points surrounding a provided point
- * @function adjacentPoints
+ * @function
  * @param {module:matrixObjects~Point} pnt - The point we want to find adjacent points for.
  * @param {module:matrixObjects~Matrix} matrix - The matrix having the point.
  * @returns {Array.<module:matrixObjects~Point>}
@@ -253,7 +253,7 @@
 
     /**
  * Given two points, compare the x, y, and z of each to see if they are the same
- * @function areEqualPoints
+ * @function
  * @param {module:matrixObjects~Point} p1 - The first point to compare
  * @param {module:matrixObjects~Point} p2 - The other point to be compared
  * @returns {boolean}
@@ -290,7 +290,7 @@
     /**
  * Generate point data for each item in the matrix
  * WARNING: This is a recursive function.
- * @function bindPointData
+ * @function
  * @param {module:matrixObjects~MatrixColumn|module:matrixObjects~MatrixRow} item - A special DomItem
  * which is either a layer, row, or column in a matrix.
  * @param {module:matrixObjects~Point} pnt - A point to be added to a specific Matrix Column
@@ -329,7 +329,7 @@
     /**
  * Given two points, check the cells between using specified function.
  * When inclusive is set to true the provided start and end points will also be tested
- * @function checkInBetween
+ * @function
  * @param {...*} args - These args match the parameter list for {@link module:matrixFunctions~testPointsBetween}
  * @returns {boolean}
  */
@@ -352,7 +352,7 @@
 
     /**
  * Test if the provided point exists in the matrix.
- * @function checkValidPoint
+ * @function
  * @param {module:matrixObjects~Point} pnt - Provide a point to validate.
  * @param {module:matrixObjects~Matrix} matrix - The matrix that contains valid points.
  * @returns {boolean}
@@ -380,7 +380,7 @@
 
     /**
  * Return an array of all the points in the matrix
- * @function getAllPoints
+ * @function
  * @param {module:matrixObjects~Matrix|module:matrixObjects~MatrixColumn} matrix - The matrix to retrieve
  * points from.
  * @param {Array.<module:matrixObjects~Point>} [allPoints=[]] - The array of points to be returned
@@ -414,7 +414,7 @@
 
     /**
  * Return point-like object with all of the axis lengths.
- * @function getAxisLengths
+ * @function
  * @param {module:matrixObjects~Matrix} matrix - The matrix to get the dimensions of.
  * @returns {module:matrixObjects~Point}
  */
@@ -443,7 +443,7 @@
 
     /**
  * Retrieve the DomItem associated with the provided element in the matrix
- * @function getDomItemFromElement
+ * @function
  * @param {Node|HTMLElement} elem - Provide an element having an
  * associated DomItem.
  * @param {module:matrixObjects~Matrix} matrix - The matrix potentially containing the DomItem with Point.
@@ -472,7 +472,7 @@
 
     /**
  * Retrieve the DomItem associated with the provided point
- * @function getDomItemFromPoint
+ * @function
  * @param {module:matrixObjects~Point} pnt - A point corresponding to a DomItem.
  * @param {module:matrixObjects~Matrix} matrix - The matrix containing the point.
  * @returns {false|module:domObjects~DomItem}
@@ -500,7 +500,7 @@
 
     /**
  * Having provided a coordinate number, find all corresponding axis, return the first match.
- * @function getFirstAxisOfCoordinate
+ * @function
  * @param {module:matrixObjects~Point} pnt - The Point containing a matching coordinate.
  * @param {module:matrixObjects~coordinate} coordinate - The coordinate to search for.
  * @returns {false|module:matrixObjects~axis}
@@ -530,7 +530,7 @@
 
     /**
  * Return the first coordinate number with the highest absolute value.
- * @function getHighestAbsoluteCoordinate
+ * @function
  * @param {module:matrixObjects~Point} pnt - A Point to be assessed.
  * @returns {module:matrixObjects~coordinate}
  */
@@ -563,7 +563,7 @@
 
     /**
  * Retrieve the point associated with the provided element.
- * @function getPointFromElement
+ * @function
  * @param {Node|HTMLElement} elem - Provide an element associated with
  * a point.
  * @returns {module:matrixObjects~Point}
@@ -598,7 +598,7 @@
     /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
  * includes 'start' (line[0]) and 'end' (line[line.length-1])
- * @function getPointsLine
+ * @function
  * @param {module:matrixObjects~Point} start - The starting location of the line.
  * @param {module:matrixObjects~Point} end - The final line destination.
  * @param {Array.<module:matrixObjects~Point>} [line=[]] - The resulting line to connect start and end.
@@ -665,7 +665,7 @@
     /**
  * Takes an array of arrays containing two points each. Calls getPointsLine for each array of points. Returns an
  * array of all points captured for each line segment
- * @function getPointsLines
+ * @function
  * @param {Array.<Array.<module:matrixObjects~Point>>} lines - An array of lines only containing start and end.
  * @returns {Array.<Array.<module:matrixObjects~Point>>}
  */
@@ -694,7 +694,7 @@
 
     /**
  * Given a start point, line length, and a direction, generate the end point of the line.
- * @function lineEndPoint
+ * @function
  * @param {module:matrixObjects~Point} start - The selected starting point.
  * @param {number} length - The total length of the line.
  * @param {module:matrixObjects~Direction} dir - The direction of the line.
@@ -723,7 +723,7 @@
 
     /**
  * Based on provided point and point direction generate next point.
- * @function nextCell
+ * @function
  * @param {module:matrixObjects~Point} pnt - Provide the current / initial point
  * @param {module:matrixObjects~Direction} dir - Provide the direction to be applied to find the next point
  * @returns {module:matrixObjects~Point}
@@ -785,7 +785,7 @@
 
     /**
  * Based on provided point and another point, get a point with the difference between each axis
- * @function pointDifference
+ * @function
  * @param {module:matrixObjects~Point} start - The first point to compare
  * @param {module:matrixObjects~Point} end - The other point to be compared
  * @returns {module:matrixObjects~Point}
@@ -844,7 +844,7 @@
     /**
  * Retrieve a directional coordinate value based on two provided points
  * (directions consist of two zero coordinates and a single coordinate of 1 / -1)
- * @function pointsToDirection
+ * @function
  * @param {module:matrixObjects~Point} start - The first point to assess.
  * @param {module:matrixObjects~Point} end - The other point to assess.
  * @returns {module:matrixObjects~Direction}
@@ -874,7 +874,7 @@
 
     /**
  * Get random direction point
- * @function randDirection
+ * @function
  * @param {Array.<module:matrixObjects~Point>} [useCoordinates=[]] - An array of possible directions.
  * @returns {module:matrixObjects~Direction}
  */
@@ -904,7 +904,7 @@
 
     /**
  * Generate a random starting point for a line with the provided length and direction.
- * @function randomStart
+ * @function
  * @param {number} length - The intended length the resulting line.
  * @param {module:matrixObjects~Direction} dir - The direction the line will extend towards.
  * @param {module:matrixObjects~Point} [lengthLimits={x: 10, y: 10, z: 10}] - The maximum grid size.
@@ -951,7 +951,7 @@
     /**
  * Given a start and end point, test the points between with the provided function. Return the points as part of true
  * and / or false properties based on the test.
- * @function module:matrixFunctions~testPointsBetween
+ * @function
  * @param {module:matrixObjects~Point} start - The beginning point to check.
  * @param {module:matrixObjects~Point} end - The terminating point to check between.
  * @param {module:matrixObjects~Matrix} matrix - The grid of points all the points can exist on.
@@ -1027,7 +1027,7 @@
 
     /**
  * Return a matrix where x, y, and z are equal
- * @function cube
+ * @function
  * @param {Array.<module:matrixObjects~MatrixTile>} [x=[]] - All the data to be presented as part of the
  * specified point, requires MatrixTile base
  * @param {Array.<module:matrixObjects~MatrixRow>} [y=[]] - Additional data to append to the MatrixRow
@@ -1152,7 +1152,7 @@
 
     /**
  * Create a 3d matrix of i with x by y by z size, add additional objects for each layer as well
- * @function matrix
+ * @function
  * @param {
  * {coordinate: module:matrixObjects~coordinate, props: Array.<module:matrixObjects~MatrixTile>}
  * } x - Properties and a coordinate defining the width of the matrix.
@@ -1259,7 +1259,7 @@
 
     /**
  * Store the point data for an x, y, z {@link module:matrixObjects~Matrix}.
- * @function point
+ * @function
  * @param {module:matrixObjects~coordinate} x - The numeric value for X-coordinate
  * @param {module:matrixObjects~coordinate} y - The numeric value for Y-coordinate
  * @param {module:matrixObjects~coordinate} [z=0] - The numeric value for Z-coordinate (default to 0 for 2D
@@ -1294,7 +1294,7 @@
 
     /**
  * Return a single layer matrix where x and y are equal
- * @function square
+ * @function
  * @param {Array.<module:matrixObjects~MatrixTile>} [x=[]] - All the data to be presented as part of the
  * specified point, requires MatrixTile base
  * @param {Array.<module:matrixObjects~MatrixRow>} [y=[]] - Additional data to append to the MatrixRow
@@ -1351,7 +1351,7 @@
 
     /**
  * A default tile in the {@link module:matrixObjects~Matrix}
- * @function tile
+ * @function
  * @returns {module:matrixObjects~MatrixTile}
  */
     const tile = function tile () {

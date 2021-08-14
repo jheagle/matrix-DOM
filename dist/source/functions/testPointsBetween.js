@@ -30,7 +30,7 @@ function _defineProperty (obj, key, value) { if (key in obj) { Object.defineProp
 /**
  * Given a start and end point, test the points between with the provided function. Return the points as part of true
  * and / or false properties based on the test.
- * @function module:matrixFunctions~testPointsBetween
+ * @function
  * @param {module:matrixObjects~Point} start - The beginning point to check.
  * @param {module:matrixObjects~Point} end - The terminating point to check between.
  * @param {module:matrixObjects~Matrix} matrix - The grid of points all the points can exist on.

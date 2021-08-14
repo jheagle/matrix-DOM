@@ -13,7 +13,7 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
 
 /**
  * Return a single layer matrix where x and y are equal
- * @function square
+ * @function
  * @param {Array.<module:matrixObjects~MatrixTile>} [x=[]] - All the data to be presented as part of the
  * specified point, requires MatrixTile base
  * @param {Array.<module:matrixObjects~MatrixRow>} [y=[]] - Additional data to append to the MatrixRow

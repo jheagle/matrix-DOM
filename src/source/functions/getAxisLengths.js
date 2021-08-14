@@ -3,7 +3,7 @@ import point from '../objects/point'
 
 /**
  * Return point-like object with all of the axis lengths.
- * @function getAxisLengths
+ * @function
  * @param {module:matrixObjects~Matrix} matrix - The matrix to get the dimensions of.
  * @returns {module:matrixObjects~Point}
  */

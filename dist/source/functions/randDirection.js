@@ -15,7 +15,7 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
 
 /**
  * Get random direction point
- * @function randDirection
+ * @function
  * @param {Array.<module:matrixObjects~Point>} [useCoordinates=[]] - An array of possible directions.
  * @returns {module:matrixObjects~Direction}
  */

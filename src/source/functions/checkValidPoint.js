@@ -2,7 +2,7 @@ import 'core-js/stable'
 
 /**
  * Test if the provided point exists in the matrix.
- * @function checkValidPoint
+ * @function
  * @param {module:matrixObjects~Point} pnt - Provide a point to validate.
  * @param {module:matrixObjects~Matrix} matrix - The matrix that contains valid points.
  * @returns {boolean}

@@ -38,7 +38,7 @@ require('core-js/stable')
 
 /**
  * Store the point data for an x, y, z {@link module:matrixObjects~Matrix}.
- * @function point
+ * @function
  * @param {module:matrixObjects~coordinate} x - The numeric value for X-coordinate
  * @param {module:matrixObjects~coordinate} y - The numeric value for Y-coordinate
  * @param {module:matrixObjects~coordinate} [z=0] - The numeric value for Z-coordinate (default to 0 for 2D

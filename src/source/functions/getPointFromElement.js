@@ -3,7 +3,7 @@ import point from '../objects/point'
 
 /**
  * Retrieve the point associated with the provided element.
- * @function getPointFromElement
+ * @function
  * @param {Node|HTMLElement} elem - Provide an element associated with
  * a point.
  * @returns {module:matrixObjects~Point}

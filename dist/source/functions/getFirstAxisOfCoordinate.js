@@ -13,7 +13,7 @@ require('core-js/stable')
 
 /**
  * Having provided a coordinate number, find all corresponding axis, return the first match.
- * @function getFirstAxisOfCoordinate
+ * @function
  * @param {module:matrixObjects~Point} pnt - The Point containing a matching coordinate.
  * @param {module:matrixObjects~coordinate} coordinate - The coordinate to search for.
  * @returns {false|module:matrixObjects~axis}

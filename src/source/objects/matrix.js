@@ -41,7 +41,7 @@ import jsonDom from 'json-dom'
 
 /**
  * Create a 3d matrix of i with x by y by z size, add additional objects for each layer as well
- * @function matrix
+ * @function
  * @param {
  * {coordinate: module:matrixObjects~coordinate, props: Array.<module:matrixObjects~MatrixTile>}
  * } x - Properties and a coordinate defining the width of the matrix.

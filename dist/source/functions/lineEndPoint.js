@@ -13,7 +13,7 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
 
 /**
  * Given a start point, line length, and a direction, generate the end point of the line.
- * @function lineEndPoint
+ * @function
  * @param {module:matrixObjects~Point} start - The selected starting point.
  * @param {number} length - The total length of the line.
  * @param {module:matrixObjects~Direction} dir - The direction of the line.

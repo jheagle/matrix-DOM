@@ -15,7 +15,7 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
 
 /**
  * Generate a random starting point for a line with the provided length and direction.
- * @function randomStart
+ * @function
  * @param {number} length - The intended length the resulting line.
  * @param {module:matrixObjects~Direction} dir - The direction the line will extend towards.
  * @param {module:matrixObjects~Point} [lengthLimits={x: 10, y: 10, z: 10}] - The maximum grid size.

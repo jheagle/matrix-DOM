@@ -13,7 +13,7 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
 
 /**
  * Retrieve the DomItem associated with the provided point
- * @function getDomItemFromPoint
+ * @function
  * @param {module:matrixObjects~Point} pnt - A point corresponding to a DomItem.
  * @param {module:matrixObjects~Matrix} matrix - The matrix containing the point.
  * @returns {false|module:domObjects~DomItem}

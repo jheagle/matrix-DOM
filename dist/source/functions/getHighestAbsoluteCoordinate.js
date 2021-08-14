@@ -13,7 +13,7 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
 
 /**
  * Return the first coordinate number with the highest absolute value.
- * @function getHighestAbsoluteCoordinate
+ * @function
  * @param {module:matrixObjects~Point} pnt - A Point to be assessed.
  * @returns {module:matrixObjects~coordinate}
  */

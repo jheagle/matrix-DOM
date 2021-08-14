@@ -2,7 +2,7 @@ import 'core-js/stable'
 
 /**
  * Return an array of all the points in the matrix
- * @function getAllPoints
+ * @function
  * @param {module:matrixObjects~Matrix|module:matrixObjects~MatrixColumn} matrix - The matrix to retrieve
  * points from.
  * @param {Array.<module:matrixObjects~Point>} [allPoints=[]] - The array of points to be returned

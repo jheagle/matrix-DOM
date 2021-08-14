@@ -5,7 +5,7 @@ import point from '../objects/point'
 /**
  * Generate point data for each item in the matrix
  * WARNING: This is a recursive function.
- * @function bindPointData
+ * @function
  * @param {module:matrixObjects~MatrixColumn|module:matrixObjects~MatrixRow} item - A special DomItem
  * which is either a layer, row, or column in a matrix.
  * @param {module:matrixObjects~Point} pnt - A point to be added to a specific Matrix Column

@@ -13,7 +13,7 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
 
 /**
  * Return point-like object with all of the axis lengths.
- * @function getAxisLengths
+ * @function
  * @param {module:matrixObjects~Matrix} matrix - The matrix to get the dimensions of.
  * @returns {module:matrixObjects~Point}
  */

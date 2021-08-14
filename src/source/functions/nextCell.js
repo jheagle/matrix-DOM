@@ -3,7 +3,7 @@ import point from '../objects/point'
 
 /**
  * Based on provided point and point direction generate next point.
- * @function nextCell
+ * @function
  * @param {module:matrixObjects~Point} pnt - Provide the current / initial point
  * @param {module:matrixObjects~Direction} dir - Provide the direction to be applied to find the next point
  * @returns {module:matrixObjects~Point}

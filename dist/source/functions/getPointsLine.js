@@ -20,7 +20,7 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
 /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
  * includes 'start' (line[0]) and 'end' (line[line.length-1])
- * @function getPointsLine
+ * @function
  * @param {module:matrixObjects~Point} start - The starting location of the line.
  * @param {module:matrixObjects~Point} end - The final line destination.
  * @param {Array.<module:matrixObjects~Point>} [line=[]] - The resulting line to connect start and end.

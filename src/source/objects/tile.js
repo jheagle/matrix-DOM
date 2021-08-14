@@ -11,7 +11,7 @@ import 'core-js/stable'
 
 /**
  * A default tile in the {@link module:matrixObjects~Matrix}
- * @function tile
+ * @function
  * @returns {module:matrixObjects~MatrixTile}
  */
 const tile = () => ({

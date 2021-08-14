@@ -14,7 +14,7 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
 /**
  * Given two points, check the cells between using specified function.
  * When inclusive is set to true the provided start and end points will also be tested
- * @function checkInBetween
+ * @function
  * @param {...*} args - These args match the parameter list for {@link module:matrixFunctions~testPointsBetween}
  * @returns {boolean}
  */

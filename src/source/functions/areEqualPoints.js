@@ -2,7 +2,7 @@ import 'core-js/stable'
 
 /**
  * Given two points, compare the x, y, and z of each to see if they are the same
- * @function areEqualPoints
+ * @function
  * @param {module:matrixObjects~Point} p1 - The first point to compare
  * @param {module:matrixObjects~Point} p2 - The other point to be compared
  * @returns {boolean}

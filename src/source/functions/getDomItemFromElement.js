@@ -4,7 +4,7 @@ import getPointFromElement from './getPointFromElement'
 
 /**
  * Retrieve the DomItem associated with the provided element in the matrix
- * @function getDomItemFromElement
+ * @function
  * @param {Node|HTMLElement} elem - Provide an element having an
  * associated DomItem.
  * @param {module:matrixObjects~Matrix} matrix - The matrix potentially containing the DomItem with Point.
