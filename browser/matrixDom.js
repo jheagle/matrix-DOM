@@ -124,7 +124,7 @@
     function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
     /**
- * @file All of the functionalHelpers matrix functions for working with a grid of points.
+ * @file All of the siFunciona matrix functions for working with a grid of points.
  * @author Joshua Heagle <joshuaheagle@gmail.com>
  * @version 1.0.0
  * @module matrixFunctions
@@ -279,7 +279,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _point = _interopRequireDefault(require('../objects/point'))
 
@@ -298,9 +298,9 @@
  */
     const bindPointData = function bindPointData (item) {
       const pnt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : (0, _point.default)(0, 0, 0)
-      return _functionalHelpers.default.mergeObjects(item, item.point
+      return _siFunciona.default.mergeObjects(item, item.point
         ? {
-            point: _functionalHelpers.default.cloneObject(pnt)
+            point: _siFunciona.default.cloneObject(pnt)
           }
         : {
             children: item.children.map(function (el, i) {
@@ -311,7 +311,7 @@
 
     const _default = bindPointData
     exports.default = _default
-  }, { '../objects/point': 30, 'core-js/modules/es.array.map.js': 229, 'core-js/modules/es.object.assign.js': 288, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { '../objects/point': 30, 'core-js/modules/es.array.map.js': 229, 'core-js/modules/es.object.assign.js': 288, 'core-js/stable': 434, 'si-funciona': 486 }],
   7: [function (require, module, exports) {
     'use strict'
 
@@ -524,7 +524,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
@@ -535,12 +535,12 @@
  * @returns {module:matrixObjects~coordinate}
  */
     const getHighestAbsoluteCoordinate = function getHighestAbsoluteCoordinate (pnt) {
-      return _functionalHelpers.default.reduceObject(pnt, _functionalHelpers.default.absoluteMax, 0)
+      return _siFunciona.default.reduceObject(pnt, _siFunciona.default.absoluteMax, 0)
     }
 
     const _default = getHighestAbsoluteCoordinate
     exports.default = _default
-  }, { 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { 'core-js/stable': 434, 'si-funciona': 486 }],
   15: [function (require, module, exports) {
     'use strict'
 
@@ -762,7 +762,7 @@
  */
     const pointAndCoordinateToDirection = function pointAndCoordinateToDirection (pnt, highestCoordinate) {
       return (function (axis) {
-        return axis !== false ? functionalHelpers.mergeObjects((0, _point.default)(0, 0, 0), _defineProperty({}, ''.concat(axis), highestCoordinate > 0 ? 1 : -1)) : (0, _point.default)(0, 0, 0)
+        return axis !== false ? siFunciona.mergeObjects((0, _point.default)(0, 0, 0), _defineProperty({}, ''.concat(axis), highestCoordinate > 0 ? 1 : -1)) : (0, _point.default)(0, 0, 0)
       }((0, _getFirstAxisOfCoordinate.default)(pnt, highestCoordinate)))
     }
 
@@ -866,7 +866,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _point = _interopRequireDefault(require('../objects/point'))
 
@@ -880,12 +880,12 @@
  */
     const randDirection = function randDirection () {
       const useCoordinates = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : []
-      return useCoordinates.length ? useCoordinates[_functionalHelpers.default.randomInteger(useCoordinates.length)] : (0, _point.default)(0, 0, 0)
+      return useCoordinates.length ? useCoordinates[_siFunciona.default.randomInteger(useCoordinates.length)] : (0, _point.default)(0, 0, 0)
     }
 
     const _default = randDirection
     exports.default = _default
-  }, { '../objects/point': 30, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { '../objects/point': 30, 'core-js/stable': 434, 'si-funciona': 486 }],
   25: [function (require, module, exports) {
     'use strict'
 
@@ -896,7 +896,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _point = _interopRequireDefault(require('../objects/point'))
 
@@ -912,12 +912,12 @@
  */
     const randomStart = function randomStart (length, dir) {
       const lengthLimits = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : (0, _point.default)(10, 10, 10)
-      return (0, _point.default)(_functionalHelpers.default.randomInteger(lengthLimits.x - (length - 1) * dir.x), _functionalHelpers.default.randomInteger(lengthLimits.y - (length - 1) * dir.y), _functionalHelpers.default.randomInteger(lengthLimits.z - (length - 1) * dir.z))
+      return (0, _point.default)(_siFunciona.default.randomInteger(lengthLimits.x - (length - 1) * dir.x), _siFunciona.default.randomInteger(lengthLimits.y - (length - 1) * dir.y), _siFunciona.default.randomInteger(lengthLimits.z - (length - 1) * dir.z))
     }
 
     const _default = randomStart
     exports.default = _default
-  }, { '../objects/point': 30, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { '../objects/point': 30, 'core-js/stable': 434, 'si-funciona': 486 }],
   26: [function (require, module, exports) {
     'use strict'
 
@@ -932,7 +932,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _getPointsLine = _interopRequireDefault(require('./getPointsLine'))
 
@@ -964,7 +964,7 @@
       return (0, _getPointsLine.default)(start, end).filter(function (prop, i, line) {
         return i !== 0 && i !== line.length - 1 || inclusive
       }).reduce(function (newPoints, next) {
-        return _functionalHelpers.default.mergeObjects(newPoints, _defineProperty({}, ''.concat(func(next, matrix)), [next]))
+        return _siFunciona.default.mergeObjects(newPoints, _defineProperty({}, ''.concat(func(next, matrix)), [next]))
       }, {
         true: [],
         false: []
@@ -973,7 +973,7 @@
 
     const _default = testPointsBetween
     exports.default = _default
-  }, { './getPointsLine': 16, 'core-js/modules/es.array.filter.js': 216, 'core-js/modules/es.array.reduce.js': 232, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './getPointsLine': 16, 'core-js/modules/es.array.filter.js': 216, 'core-js/modules/es.array.reduce.js': 232, 'core-js/stable': 434, 'si-funciona': 486 }],
   27: [function (require, module, exports) {
     'use strict'
 
@@ -1095,7 +1095,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _jsonDom = _interopRequireDefault(require('json-dom'))
 
@@ -1185,24 +1185,24 @@
             props: []
           }
       const matrixProps = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : []
-      return _functionalHelpers.default.mergeObjects.apply(_functionalHelpers.default, [_jsonDom.default.createDomItem({
+      return _siFunciona.default.mergeObjects.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
         tagName: 'div',
         attributes: {
           className: 'matrix'
         },
-        children: _functionalHelpers.default.buildArray(_functionalHelpers.default.mergeObjectsMutable.apply(_functionalHelpers.default, [_jsonDom.default.createDomItem({
+        children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
           axis: 'z',
           tagName: 'div',
           attributes: {
             className: 'layer'
           },
-          children: _functionalHelpers.default.buildArray(_functionalHelpers.default.mergeObjectsMutable.apply(_functionalHelpers.default, [_jsonDom.default.createDomItem({
+          children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
             axis: 'y',
             tagName: 'div',
             attributes: {
               className: 'row'
             },
-            children: _functionalHelpers.default.buildArray(_functionalHelpers.default.mergeObjectsMutable.apply(_functionalHelpers.default, [_jsonDom.default.createDomItem({
+            children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
               axis: 'x',
               tagName: 'div',
               attributes: {
@@ -1217,7 +1217,7 @@
 
     const _default = matrix
     exports.default = _default
-  }, { 'core-js/modules/es.array.concat.js': 212, 'core-js/modules/es.array.from.js': 222, 'core-js/modules/es.array.iterator.js': 226, 'core-js/modules/es.array.slice.js': 234, 'core-js/modules/es.function.name.js': 253, 'core-js/modules/es.object.to-string.js': 311, 'core-js/modules/es.string.iterator.js': 353, 'core-js/modules/es.symbol.description.js': 375, 'core-js/modules/es.symbol.iterator.js': 378, 'core-js/modules/es.symbol.js': 379, 'core-js/modules/web.dom-collections.iterator.js': 427, 'core-js/stable': 434, 'functional-helpers': 486, 'json-dom': 487 }],
+  }, { 'core-js/modules/es.array.concat.js': 212, 'core-js/modules/es.array.from.js': 222, 'core-js/modules/es.array.iterator.js': 226, 'core-js/modules/es.array.slice.js': 234, 'core-js/modules/es.function.name.js': 253, 'core-js/modules/es.object.to-string.js': 311, 'core-js/modules/es.string.iterator.js': 353, 'core-js/modules/es.symbol.description.js': 375, 'core-js/modules/es.symbol.iterator.js': 378, 'core-js/modules/es.symbol.js': 379, 'core-js/modules/web.dom-collections.iterator.js': 427, 'core-js/stable': 434, 'si-funciona': 486, 'json-dom': 487 }],
   30: [function (require, module, exports) {
     'use strict'
 
@@ -13616,7 +13616,7 @@
  * @author Joshua Heagle <joshuaheagle@gmail.com>
  * @version 1.0.0
  * @module arrayHelpers
- * @memberOf module:functionalHelpers
+ * @memberOf module:siFunciona
  */
     const _default = {
       addUniqueToArray: _addUniqueToArray.default,
@@ -14083,7 +14083,7 @@
  * @author Joshua Heagle <joshuaheagle@gmail.com>
  * @version 1.0.0
  * @module objectDescriptors
- * @memberOf module:functionalHelpers
+ * @memberOf module:siFunciona
  */
     const _default = {
       assignDescriptor: _assignDescriptor.default,
@@ -14915,7 +14915,7 @@
  * @author Joshua Heagle <joshuaheagle@gmail.com>
  * @version 1.0.0
  * @module functionHelpers
- * @memberOf module:functionalHelpers
+ * @memberOf module:siFunciona
  */
     const _default = {
       callWithParams: _callWithParams.default,
@@ -15441,7 +15441,7 @@
  * @author Joshua Heagle <joshuaheagle@gmail.com>
  * @version 1.0.0
  * @module numberHelpers
- * @memberOf module:functionalHelpers
+ * @memberOf module:siFunciona
  */
     const _default = {
       absoluteMax: _absoluteMax.default,
@@ -15638,7 +15638,7 @@
  * @author Joshua Heagle <joshuaheagle@gmail.com>
  * @version 1.0.0
  * @module objectHelpers
- * @memberOf module:functionalHelpers
+ * @memberOf module:siFunciona
  */
     const _default = {
       cloneObject: _cloneObject.default,
@@ -16419,11 +16419,11 @@
         function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
         /**
- * All of the functionalHelpers system functions for stringing together functions and simplifying logic.
+ * All of the siFunciona system functions for stringing together functions and simplifying logic.
  * @file
  * @author Joshua Heagle <joshuaheagle@gmail.com>
  * @version 1.0.0
- * @module functionalHelpers
+ * @module siFunciona
  */
 
         /**
@@ -16435,28 +16435,28 @@
  * @type {module|*}
  */
 
-        const previousFunctionalHelpers = root.functionalHelpers || {}
+        const previousFunctionalHelpers = root.siFunciona || {}
         /**
- * All methods exported from this module are encapsulated within functionalHelpers.
- * @typedef {module:functionalHelpers|module:arrayHelpers|module:objectDescriptors|module:functionHelpers|module:numberHelpers|module:objectHelpers} functionalHelpers
+ * All methods exported from this module are encapsulated within siFunciona.
+ * @typedef {module:siFunciona|module:arrayHelpers|module:objectDescriptors|module:functionHelpers|module:numberHelpers|module:objectHelpers} siFunciona
  */
 
-        const functionalHelpers = {}
-        root.functionalHelpers = functionalHelpers
+        const siFunciona = {}
+        root.siFunciona = siFunciona
         /**
  * Return a reference to this library while preserving the original same-named library
  * @function
- * @returns {functionalHelpers}
+ * @returns {siFunciona}
  */
 
         const noConflict = function noConflict () {
-          root.functionalHelpers = previousFunctionalHelpers
-          return functionalHelpers
+          root.siFunciona = previousFunctionalHelpers
+          return siFunciona
         }
 
-        functionalHelpers.noConflict = noConflict
+        siFunciona.noConflict = noConflict
 
-        const _default = Object.assign(functionalHelpers, _arrays.default, _descriptors.default, _functions.default, _numbers.default, _objects.default)
+        const _default = Object.assign(siFunciona, _arrays.default, _descriptors.default, _functions.default, _numbers.default, _objects.default)
 
         exports.default = _default
       }).call(this)
@@ -16690,7 +16690,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _documentItem = _interopRequireDefault(require('../objects/documentItem'))
 
@@ -16712,12 +16712,12 @@
  */
     const appendHtml = function appendHtml (item) {
       const parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _documentItem.default.body
-      return (0, _appendAndReturnChild.default)((0, _bindElement.default)(item), _functionalHelpers.default.setValue('children', _functionalHelpers.default.addUniqueToArray(item, (0, _retrieveParentItem.default)(parent).children), (0, _retrieveParentItem.default)(parent)))
+      return (0, _appendAndReturnChild.default)((0, _bindElement.default)(item), _siFunciona.default.setValue('children', _siFunciona.default.addUniqueToArray(item, (0, _retrieveParentItem.default)(parent).children), (0, _retrieveParentItem.default)(parent)))
     }
 
     const _default = appendHtml
     exports.default = _default
-  }, { '../objects/documentItem': 525, './appendAndReturnChild': 489, './bindElement': 494, './retrieveParentItem': 517, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { '../objects/documentItem': 525, './appendAndReturnChild': 489, './bindElement': 494, './retrieveParentItem': 517, 'core-js/stable': 434, 'si-funciona': 486 }],
   491: [function (require, module, exports) {
     'use strict'
 
@@ -16728,7 +16728,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
@@ -16749,9 +16749,9 @@
     const appendListeners = function appendListeners (item, event, listener) {
       const args = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {}
       const options = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false
-      return _functionalHelpers.default.setValue('children', _functionalHelpers.default.mapObject(item.children, function (i) {
+      return _siFunciona.default.setValue('children', _siFunciona.default.mapObject(item.children, function (i) {
         return appendListeners(i, event, listener, args, options)
-      }), _functionalHelpers.default.setValue('eventListeners', _functionalHelpers.default.setValue(event, {
+      }), _siFunciona.default.setValue('eventListeners', _siFunciona.default.setValue(event, {
         listenerFunc: listener,
         listenerArgs: args,
         listenerOptions: options
@@ -16760,7 +16760,7 @@
 
     const _default = appendListeners
     exports.default = _default
-  }, { 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { 'core-js/stable': 434, 'si-funciona': 486 }],
   492: [function (require, module, exports) {
     'use strict'
 
@@ -16816,7 +16816,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _bindListeners = _interopRequireDefault(require('./bindListeners'))
 
@@ -16833,14 +16833,14 @@
  * @returns {module:domObjects~DomItem}
  */
     const bindAllListeners = function bindAllListeners (item) {
-      return _functionalHelpers.default.setValue('children', _functionalHelpers.default.mapObject(item.children, function (i) {
+      return _siFunciona.default.setValue('children', _siFunciona.default.mapObject(item.children, function (i) {
         return bindAllListeners(i)
       }), (0, _bindListeners.default)(item))
     }
 
     const _default = bindAllListeners
     exports.default = _default
-  }, { './bindListeners': 496, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './bindListeners': 496, 'core-js/stable': 434, 'si-funciona': 486 }],
   494: [function (require, module, exports) {
     'use strict'
 
@@ -16851,7 +16851,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _generateElement = _interopRequireDefault(require('./generateElement'))
 
@@ -16865,12 +16865,12 @@
  * @return {module:domObjects~DomItem}
  */
     const bindElement = function bindElement (item) {
-      return _functionalHelpers.default.setValue('element', !item.element || !item.element.style ? (0, _generateElement.default)(item).element : item.element, item)
+      return _siFunciona.default.setValue('element', !item.element || !item.element.style ? (0, _generateElement.default)(item).element : item.element, item)
     }
 
     const _default = bindElement
     exports.default = _default
-  }, { './generateElement': 501, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './generateElement': 501, 'core-js/stable': 434, 'si-funciona': 486 }],
   495: [function (require, module, exports) {
     'use strict'
 
@@ -16881,7 +16881,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
@@ -16893,7 +16893,7 @@
  * @returns {module:domObjects~DomItem}
  */
     const bindElementListeners = function bindElementListeners (item) {
-      return _functionalHelpers.default.setValue('eventListeners', _functionalHelpers.default.mapObject(item.eventListeners, function (attr, event) {
+      return _siFunciona.default.setValue('eventListeners', _siFunciona.default.mapObject(item.eventListeners, function (attr, event) {
         return assignListener(event, item.element, function (e) {
           return attr.listenerFunc(e, item, attr.listenerArgs)
         }, attr.listenerOptions)
@@ -16902,7 +16902,7 @@
 
     const _default = bindElementListeners
     exports.default = _default
-  }, { 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { 'core-js/stable': 434, 'si-funciona': 486 }],
   496: [function (require, module, exports) {
     'use strict'
 
@@ -16959,7 +16959,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _elementHasAttribute = _interopRequireDefault(require('./elementHasAttribute'))
 
@@ -16980,11 +16980,11 @@
  */
     const elementChanges = function elementChanges (config) {
       return config.element.tagName.toLowerCase() !== config.tagName.toLowerCase() ? (0, _generateElement.default)(config) // Remove all the similarities
-        : _functionalHelpers.default.setValue('attributes', _functionalHelpers.default.filterObject(config.attributes, // For each attribute, check if it becomes true / false based on the comparison results
+        : _siFunciona.default.setValue('attributes', _siFunciona.default.filterObject(config.attributes, // For each attribute, check if it becomes true / false based on the comparison results
           function (attr1, key1) {
-            return _functionalHelpers.default.filterObject( // Get attributes as object of truthy and falsy values
-              _functionalHelpers.default.mapObject(config.attributes, function (attr2, key2) {
-                return _typeof(attr2) === 'object' || key2 === 'className' ? _functionalHelpers.default.filterObject((0, _elementHasAttribute.default)(config.element, key2, attr2), function (attr3) {
+            return _siFunciona.default.filterObject( // Get attributes as object of truthy and falsy values
+              _siFunciona.default.mapObject(config.attributes, function (attr2, key2) {
+                return _typeof(attr2) === 'object' || key2 === 'className' ? _siFunciona.default.filterObject((0, _elementHasAttribute.default)(config.element, key2, attr2), function (attr3) {
                   return attr3 === 1
                 }) // True when the element does not already have the attribute
                   : !(0, _elementHasAttribute.default)(config.element, key2, attr2)
@@ -16997,7 +16997,7 @@
 
     const _default = elementChanges
     exports.default = _default
-  }, { './elementHasAttribute': 499, './generateElement': 501, 'core-js/modules/es.array.iterator.js': 226, 'core-js/modules/es.object.to-string.js': 311, 'core-js/modules/es.string.iterator.js': 353, 'core-js/modules/es.symbol.description.js': 375, 'core-js/modules/es.symbol.iterator.js': 378, 'core-js/modules/es.symbol.js': 379, 'core-js/modules/web.dom-collections.iterator.js': 427, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './elementHasAttribute': 499, './generateElement': 501, 'core-js/modules/es.array.iterator.js': 226, 'core-js/modules/es.object.to-string.js': 311, 'core-js/modules/es.string.iterator.js': 353, 'core-js/modules/es.symbol.description.js': 375, 'core-js/modules/es.symbol.iterator.js': 378, 'core-js/modules/es.symbol.js': 379, 'core-js/modules/web.dom-collections.iterator.js': 427, 'core-js/stable': 434, 'si-funciona': 486 }],
   498: [function (require, module, exports) {
     'use strict'
 
@@ -17012,7 +17012,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
@@ -17026,12 +17026,12 @@
  * @returns {Object<string, number>|*}
  */
     const elementCompareClassList = function elementCompareClassList (element, classes) {
-      return _functionalHelpers.default.compareArrays(classes.split(' '), [].from(element.classList))
+      return _siFunciona.default.compareArrays(classes.split(' '), [].from(element.classList))
     }
 
     const _default = elementCompareClassList
     exports.default = _default
-  }, { 'core-js/modules/es.regexp.exec.js': 335, 'core-js/modules/es.string.split.js': 365, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { 'core-js/modules/es.regexp.exec.js': 335, 'core-js/modules/es.string.split.js': 365, 'core-js/stable': 434, 'si-funciona': 486 }],
   499: [function (require, module, exports) {
     'use strict'
 
@@ -17048,7 +17048,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
@@ -17070,7 +17070,7 @@
       if (/^(style|className)$/.test(key)) {
         // For attributes which are objects or multi-part strings
         // -1 = remove attribute, 0 = no change, 1 = add attribute
-        return _functionalHelpers.default.compareArrays(typeof attr === 'string' ? attr.split(' ') : Object.keys(attr), typeof attr === 'string' ? element[key].split(' ') : Object.keys(element[key]))
+        return _siFunciona.default.compareArrays(typeof attr === 'string' ? attr.split(' ') : Object.keys(attr), typeof attr === 'string' ? element[key].split(' ') : Object.keys(element[key]))
       }
 
       return element.hasAttribute(key) && element.getAttribute(key) === attr
@@ -17078,7 +17078,7 @@
 
     const _default = elementHasAttribute
     exports.default = _default
-  }, { 'core-js/modules/es.object.keys.js': 305, 'core-js/modules/es.regexp.exec.js': 335, 'core-js/modules/es.string.split.js': 365, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { 'core-js/modules/es.object.keys.js': 305, 'core-js/modules/es.regexp.exec.js': 335, 'core-js/modules/es.string.split.js': 365, 'core-js/stable': 434, 'si-funciona': 486 }],
   500: [function (require, module, exports) {
     'use strict'
 
@@ -17135,7 +17135,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _updateElement = _interopRequireDefault(require('./updateElement'))
 
@@ -17149,12 +17149,12 @@
  * @return {module:domObjects~DomItem}
  */
     const generateElement = function generateElement (config) {
-      return (0, _updateElement.default)(_functionalHelpers.default.setValue('element', document.createElement(config.tagName), config))
+      return (0, _updateElement.default)(_siFunciona.default.setValue('element', document.createElement(config.tagName), config))
     }
 
     const _default = generateElement
     exports.default = _default
-  }, { './updateElement': 520, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './updateElement': 520, 'core-js/stable': 434, 'si-funciona': 486 }],
   502: [function (require, module, exports) {
     'use strict'
 
@@ -17194,7 +17194,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _getChildrenFromAttribute = _interopRequireDefault(require('./getChildrenFromAttribute'))
 
@@ -17206,11 +17206,11 @@
  * @memberOf module:domFunctions
  * @returns {module:domObjects~DomItem[]}
  */
-    const getChildrenByClass = _functionalHelpers.default.curry(_getChildrenFromAttribute.default)('className')
+    const getChildrenByClass = _siFunciona.default.curry(_getChildrenFromAttribute.default)('className')
 
     const _default = getChildrenByClass
     exports.default = _default
-  }, { './getChildrenFromAttribute': 505, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './getChildrenFromAttribute': 505, 'core-js/stable': 434, 'si-funciona': 486 }],
   504: [function (require, module, exports) {
     'use strict'
 
@@ -17221,7 +17221,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _getChildrenFromAttribute = _interopRequireDefault(require('./getChildrenFromAttribute'))
 
@@ -17233,11 +17233,11 @@
  * @memberOf module:domFunctions
  * @returns {module:domObjects~DomItem[]}
  */
-    const getChildrenByName = _functionalHelpers.default.curry(_getChildrenFromAttribute.default)('name')
+    const getChildrenByName = _siFunciona.default.curry(_getChildrenFromAttribute.default)('name')
 
     const _default = getChildrenByName
     exports.default = _default
-  }, { './getChildrenFromAttribute': 505, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './getChildrenFromAttribute': 505, 'core-js/stable': 434, 'si-funciona': 486 }],
   505: [function (require, module, exports) {
     'use strict'
 
@@ -17287,7 +17287,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _getParentsFromAttribute = _interopRequireDefault(require('./getParentsFromAttribute'))
 
@@ -17299,11 +17299,11 @@
  * @memberOf module:domFunctions
  * @returns {Array}
  */
-    const getParentsByClass = _functionalHelpers.default.curry(_getParentsFromAttribute.default)('className')
+    const getParentsByClass = _siFunciona.default.curry(_getParentsFromAttribute.default)('className')
 
     const _default = getParentsByClass
     exports.default = _default
-  }, { './getParentsFromAttribute': 509, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './getParentsFromAttribute': 509, 'core-js/stable': 434, 'si-funciona': 486 }],
   507: [function (require, module, exports) {
     'use strict'
 
@@ -17314,7 +17314,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _getParentsFromAttribute = _interopRequireDefault(require('./getParentsFromAttribute'))
 
@@ -17326,11 +17326,11 @@
  * @memberOf module:domFunctions
  * @returns {Array}
  */
-    const getParentsByName = _functionalHelpers.default.curry(_getParentsFromAttribute.default)('name')
+    const getParentsByName = _siFunciona.default.curry(_getParentsFromAttribute.default)('name')
 
     const _default = getParentsByName
     exports.default = _default
-  }, { './getParentsFromAttribute': 509, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './getParentsFromAttribute': 509, 'core-js/stable': 434, 'si-funciona': 486 }],
   508: [function (require, module, exports) {
     'use strict'
 
@@ -17341,7 +17341,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _getParentsFromAttribute = _interopRequireDefault(require('./getParentsFromAttribute'))
 
@@ -17353,11 +17353,11 @@
  * @memberOf module:domFunctions
  * @returns {Array}
  */
-    const getParentsByTagName = _functionalHelpers.default.curry(_getParentsFromAttribute.default)('tagName')
+    const getParentsByTagName = _siFunciona.default.curry(_getParentsFromAttribute.default)('tagName')
 
     const _default = getParentsByTagName
     exports.default = _default
-  }, { './getParentsFromAttribute': 509, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './getParentsFromAttribute': 509, 'core-js/stable': 434, 'si-funciona': 486 }],
   509: [function (require, module, exports) {
     'use strict'
 
@@ -17531,7 +17531,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _documentItem = _interopRequireDefault(require('../objects/documentItem'))
 
@@ -17549,12 +17549,12 @@
  */
     const registerListeners = function registerListeners (listeners) {
       const parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _documentItem.default
-      return _functionalHelpers.default.setValue('eventListeners', _functionalHelpers.default.mergeObjectsMutable(parent.eventListeners, listeners), parent)
+      return _siFunciona.default.setValue('eventListeners', _siFunciona.default.mergeObjectsMutable(parent.eventListeners, listeners), parent)
     }
 
     const _default = registerListeners
     exports.default = _default
-  }, { '../objects/documentItem': 525, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { '../objects/documentItem': 525, 'core-js/stable': 434, 'si-funciona': 486 }],
   514: [function (require, module, exports) {
     'use strict'
 
@@ -17602,7 +17602,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _documentItem = _interopRequireDefault(require('../objects/documentItem'))
 
@@ -17632,28 +17632,28 @@
  */
     const renderHtml = function renderHtml (item) {
       const parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _documentItem.default
-      return _functionalHelpers.default.pipe(function (domItem) {
-        return _functionalHelpers.default.setValue('element', domItem.element && domItem.element.style ? domItem.element : (0, _bindElement.default)(domItem).element, domItem)
+      return _siFunciona.default.pipe(function (domItem) {
+        return _siFunciona.default.setValue('element', domItem.element && domItem.element.style ? domItem.element : (0, _bindElement.default)(domItem).element, domItem)
       }, function (domItem) {
-        return _functionalHelpers.default.setValue('eventListeners', _functionalHelpers.default.mapObject(domItem.eventListeners, function (prop) {
-          return _functionalHelpers.default.mergeObjects(prop, {
+        return _siFunciona.default.setValue('eventListeners', _siFunciona.default.mapObject(domItem.eventListeners, function (prop) {
+          return _siFunciona.default.mergeObjects(prop, {
             listenerFunc: (0, _retrieveListener.default)(prop.listenerFunc, (0, _getTopParentItem.default)(parent))
           })
         }), domItem)
-      }, _functionalHelpers.default.curry(_functionalHelpers.default.setValue)('parentItem', parent.body || parent), function (domItem) {
+      }, _siFunciona.default.curry(_siFunciona.default.setValue)('parentItem', parent.body || parent), function (domItem) {
         return (0, _bindListeners.default)((0, _appendHtml.default)(domItem, parent))
       }, function (domItem) {
-        return _functionalHelpers.default.setValue('children', domItem.children.map(function (child) {
+        return _siFunciona.default.setValue('children', domItem.children.map(function (child) {
           return renderHtml(child, domItem)
         }), domItem)
-      })(_functionalHelpers.default.reduceObject((0, _createDomItem.default)(item), function (domItem, prop, name) {
-        return _functionalHelpers.default.setValue(name, prop, domItem)
+      })(_siFunciona.default.reduceObject((0, _createDomItem.default)(item), function (domItem, prop, name) {
+        return _siFunciona.default.setValue(name, prop, domItem)
       }, item))
     }
 
     const _default = renderHtml
     exports.default = _default
-  }, { '../objects/createDomItem': 523, '../objects/documentItem': 525, './appendHtml': 490, './bindElement': 494, './bindListeners': 496, './getTopParentItem': 510, './retrieveListener': 516, 'core-js/modules/es.array.map.js': 229, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { '../objects/createDomItem': 523, '../objects/documentItem': 525, './appendHtml': 490, './bindElement': 494, './bindListeners': 496, './getTopParentItem': 510, './retrieveListener': 516, 'core-js/modules/es.array.map.js': 229, 'core-js/stable': 434, 'si-funciona': 486 }],
   516: [function (require, module, exports) {
     'use strict'
 
@@ -17783,7 +17783,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _elementChanges = _interopRequireDefault(require('./elementChanges'))
 
@@ -17807,19 +17807,19 @@
 
       const domItem = (0, _elementChanges.default)(config) // Set the the current attributes to contain all the changes
 
-      domItem.attributes = _functionalHelpers.default.mapObject( // Retrieve only the changes to be applied from the attributes
+      domItem.attributes = _siFunciona.default.mapObject( // Retrieve only the changes to be applied from the attributes
         domItem.attributes, function (attr, key) {
-          if (!_functionalHelpers.default.isObject(attr) || _functionalHelpers.default.emptyObject(attr)) {
-            return key in config.element ? _functionalHelpers.default.setAndReturnValue(config.element, key, attr) : (0, _setAndReturnAttribute.default)(config, key, attr)
+          if (!_siFunciona.default.isObject(attr) || _siFunciona.default.emptyObject(attr)) {
+            return key in config.element ? _siFunciona.default.setAndReturnValue(config.element, key, attr) : (0, _setAndReturnAttribute.default)(config, key, attr)
           }
 
-          const cleanedStyles = _functionalHelpers.default.filterObject( // Remove attributes which have a numeric key (these are unwanted styles stored on elements)
+          const cleanedStyles = _siFunciona.default.filterObject( // Remove attributes which have a numeric key (these are unwanted styles stored on elements)
             attr, function (param, k) {
               return /^\D+$/.test(k)
             })
 
-          return _functionalHelpers.default.reduceObject(cleanedStyles, function (newStyle, p, i) {
-            return _functionalHelpers.default.setValue(i, p, newStyle)
+          return _siFunciona.default.reduceObject(cleanedStyles, function (newStyle, p, i) {
+            return _siFunciona.default.setValue(i, p, newStyle)
           }, config.element.style)
         })
       return domItem
@@ -17827,7 +17827,7 @@
 
     const _default = updateElement
     exports.default = _default
-  }, { './elementChanges': 497, './setAndReturnAttribute': 518, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './elementChanges': 497, './setAndReturnAttribute': 518, 'core-js/stable': 434, 'si-funciona': 486 }],
   521: [function (require, module, exports) {
     'use strict'
 
@@ -17838,7 +17838,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     const _updateElement = _interopRequireDefault(require('./updateElement'))
 
@@ -17855,14 +17855,14 @@
  */
     const updateElements = function updateElements (config) {
       const domItem = (0, _updateElement.default)(config)
-      return _functionalHelpers.default.setValue('children', _functionalHelpers.default.mapObject(domItem.children, function (child) {
+      return _siFunciona.default.setValue('children', _siFunciona.default.mapObject(domItem.children, function (child) {
         return updateElements(child)
       }), domItem)
     }
 
     const _default = updateElements
     exports.default = _default
-  }, { './updateElement': 520, 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { './updateElement': 520, 'core-js/stable': 434, 'si-funciona': 486 }],
   522: [function (require, module, exports) {
     'use strict'
 
@@ -17910,7 +17910,7 @@
 
     require('core-js/stable')
 
-    const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+    const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
     function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
@@ -17984,7 +17984,7 @@
  */
     const createDomItem = function createDomItem () {
       const item = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}
-      return _functionalHelpers.default.reduceObject({
+      return _siFunciona.default.reduceObject({
         tagName: 'div',
         attributes: {
           style: {}
@@ -18009,7 +18009,7 @@
 
     const _default = createDomItem
     exports.default = _default
-  }, { 'core-js/stable': 434, 'functional-helpers': 486 }],
+  }, { 'core-js/stable': 434, 'si-funciona': 486 }],
   524: [function (require, module, exports) {
     'use strict'
 

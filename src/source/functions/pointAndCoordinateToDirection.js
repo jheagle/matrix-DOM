@@ -11,7 +11,7 @@ import getFirstAxisOfCoordinate from './getFirstAxisOfCoordinate'
  */
 const pointAndCoordinateToDirection = (pnt, highestCoordinate) => (
   axis => axis !== false
-    ? functionalHelpers.mergeObjects(point(0, 0, 0), { [`${axis}`]: highestCoordinate > 0 ? 1 : -1 })
+    ? siFunciona.mergeObjects(point(0, 0, 0), { [`${axis}`]: highestCoordinate > 0 ? 1 : -1 })
     : point(0, 0, 0)
 )(getFirstAxisOfCoordinate(pnt, highestCoordinate))
 

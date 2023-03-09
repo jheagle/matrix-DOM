@@ -1,5 +1,5 @@
 import 'core-js/stable'
-import functionalHelpers from 'functional-helpers'
+import siFunciona from 'si-funciona'
 
 /**
  * Return the first coordinate number with the highest absolute value.
@@ -7,6 +7,6 @@ import functionalHelpers from 'functional-helpers'
  * @param {module:matrixObjects~Point} pnt - A Point to be assessed.
  * @returns {module:matrixObjects~coordinate}
  */
-const getHighestAbsoluteCoordinate = pnt => functionalHelpers.reduceObject(pnt, functionalHelpers.absoluteMax, 0)
+const getHighestAbsoluteCoordinate = pnt => siFunciona.reduceObject(pnt, siFunciona.absoluteMax, 0)
 
 export default getHighestAbsoluteCoordinate

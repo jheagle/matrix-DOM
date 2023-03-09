@@ -1,5 +1,5 @@
 import 'core-js/stable'
-import functionalHelpers from 'functional-helpers'
+import siFunciona from 'si-funciona'
 import point from '../objects/point'
 
 /**
@@ -11,10 +11,10 @@ import point from '../objects/point'
  * @param {module:matrixObjects~Point} pnt - A point to be added to a specific Matrix Column
  * @returns {module:matrixObjects~MatrixColumn|module:matrixObjects~MatrixRow}
  */
-const bindPointData = (item, pnt = point(0, 0, 0)) => functionalHelpers.mergeObjects(
+const bindPointData = (item, pnt = point(0, 0, 0)) => siFunciona.mergeObjects(
   item,
   item.point
-    ? { point: functionalHelpers.cloneObject(pnt) }
+    ? { point: siFunciona.cloneObject(pnt) }
     : { children: item.children.map((el, i) => bindPointData(el, Object.assign({}, pnt, { [el.axis]: i }))) }
 )
 

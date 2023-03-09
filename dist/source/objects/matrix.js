@@ -29,7 +29,7 @@ require('core-js/modules/es.array.concat.js')
 
 require('core-js/stable')
 
-const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
 const _jsonDom = _interopRequireDefault(require('json-dom'))
 
@@ -119,24 +119,24 @@ const matrix = function matrix () {
         props: []
       }
   const matrixProps = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : []
-  return _functionalHelpers.default.mergeObjects.apply(_functionalHelpers.default, [_jsonDom.default.createDomItem({
+  return _siFunciona.default.mergeObjects.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
     tagName: 'div',
     attributes: {
       className: 'matrix'
     },
-    children: _functionalHelpers.default.buildArray(_functionalHelpers.default.mergeObjectsMutable.apply(_functionalHelpers.default, [_jsonDom.default.createDomItem({
+    children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
       axis: 'z',
       tagName: 'div',
       attributes: {
         className: 'layer'
       },
-      children: _functionalHelpers.default.buildArray(_functionalHelpers.default.mergeObjectsMutable.apply(_functionalHelpers.default, [_jsonDom.default.createDomItem({
+      children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
         axis: 'y',
         tagName: 'div',
         attributes: {
           className: 'row'
         },
-        children: _functionalHelpers.default.buildArray(_functionalHelpers.default.mergeObjectsMutable.apply(_functionalHelpers.default, [_jsonDom.default.createDomItem({
+        children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
           axis: 'x',
           tagName: 'div',
           attributes: {

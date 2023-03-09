@@ -11,7 +11,7 @@ require('core-js/modules/es.array.filter.js')
 
 require('core-js/stable')
 
-const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
 const _getPointsLine = _interopRequireDefault(require('./getPointsLine'))
 
@@ -43,7 +43,7 @@ const testPointsBetween = function testPointsBetween (start, end, matrix, func) 
   return (0, _getPointsLine.default)(start, end).filter(function (prop, i, line) {
     return i !== 0 && i !== line.length - 1 || inclusive
   }).reduce(function (newPoints, next) {
-    return _functionalHelpers.default.mergeObjects(newPoints, _defineProperty({}, ''.concat(func(next, matrix)), [next]))
+    return _siFunciona.default.mergeObjects(newPoints, _defineProperty({}, ''.concat(func(next, matrix)), [next]))
   }, {
     true: [],
     false: []

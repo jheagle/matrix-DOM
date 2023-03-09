@@ -11,7 +11,7 @@ require('core-js/modules/es.object.assign.js')
 
 require('core-js/stable')
 
-const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
 const _point = _interopRequireDefault(require('../objects/point'))
 
@@ -30,9 +30,9 @@ function _defineProperty (obj, key, value) { if (key in obj) { Object.defineProp
  */
 const bindPointData = function bindPointData (item) {
   const pnt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : (0, _point.default)(0, 0, 0)
-  return _functionalHelpers.default.mergeObjects(item, item.point
+  return _siFunciona.default.mergeObjects(item, item.point
     ? {
-        point: _functionalHelpers.default.cloneObject(pnt)
+        point: _siFunciona.default.cloneObject(pnt)
       }
     : {
         children: item.children.map(function (el, i) {

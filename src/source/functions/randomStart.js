@@ -1,5 +1,5 @@
 import 'core-js/stable'
-import functionalHelpers from 'functional-helpers'
+import siFunciona from 'si-funciona'
 import point from '../objects/point'
 
 /**
@@ -15,9 +15,9 @@ const randomStart = (
   dir,
   lengthLimits = point(10, 10, 10)
 ) => point(
-  functionalHelpers.randomInteger(lengthLimits.x - ((length - 1) * dir.x)),
-  functionalHelpers.randomInteger(lengthLimits.y - ((length - 1) * dir.y)),
-  functionalHelpers.randomInteger(lengthLimits.z - ((length - 1) * dir.z))
+  siFunciona.randomInteger(lengthLimits.x - ((length - 1) * dir.x)),
+  siFunciona.randomInteger(lengthLimits.y - ((length - 1) * dir.y)),
+  siFunciona.randomInteger(lengthLimits.z - ((length - 1) * dir.z))
 )
 
 export default randomStart

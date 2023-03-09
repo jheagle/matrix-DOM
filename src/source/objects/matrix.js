@@ -1,5 +1,5 @@
 import 'core-js/stable'
-import functionalHelpers from 'functional-helpers'
+import siFunciona from 'si-funciona'
 import jsonDom from 'json-dom'
 
 /**
@@ -59,15 +59,15 @@ const matrix = (
   y = { coordinate: 0, props: [] },
   z = { coordinate: 1, props: [] },
   matrixProps = []
-) => functionalHelpers.mergeObjects(
+) => siFunciona.mergeObjects(
   jsonDom.createDomItem(
     {
       tagName: 'div',
       attributes: {
         className: 'matrix'
       },
-      children: functionalHelpers.buildArray(
-        functionalHelpers.mergeObjectsMutable(
+      children: siFunciona.buildArray(
+        siFunciona.mergeObjectsMutable(
           jsonDom.createDomItem(
             {
               axis: 'z',
@@ -75,8 +75,8 @@ const matrix = (
               attributes: {
                 className: 'layer'
               },
-              children: functionalHelpers.buildArray(
-                functionalHelpers.mergeObjectsMutable(
+              children: siFunciona.buildArray(
+                siFunciona.mergeObjectsMutable(
                   jsonDom.createDomItem(
                     {
                       axis: 'y',
@@ -84,8 +84,8 @@ const matrix = (
                       attributes: {
                         className: 'row'
                       },
-                      children: functionalHelpers.buildArray(
-                        functionalHelpers.mergeObjectsMutable(
+                      children: siFunciona.buildArray(
+                        siFunciona.mergeObjectsMutable(
                           jsonDom.createDomItem(
                             {
                               axis: 'x',

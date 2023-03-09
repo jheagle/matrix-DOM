@@ -7,7 +7,7 @@ exports.default = void 0
 
 require('core-js/stable')
 
-const _functionalHelpers = _interopRequireDefault(require('functional-helpers'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
 
 const _point = _interopRequireDefault(require('../objects/point'))
 
@@ -23,7 +23,7 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
  */
 const randomStart = function randomStart (length, dir) {
   const lengthLimits = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : (0, _point.default)(10, 10, 10)
-  return (0, _point.default)(_functionalHelpers.default.randomInteger(lengthLimits.x - (length - 1) * dir.x), _functionalHelpers.default.randomInteger(lengthLimits.y - (length - 1) * dir.y), _functionalHelpers.default.randomInteger(lengthLimits.z - (length - 1) * dir.z))
+  return (0, _point.default)(_siFunciona.default.randomInteger(lengthLimits.x - (length - 1) * dir.x), _siFunciona.default.randomInteger(lengthLimits.y - (length - 1) * dir.y), _siFunciona.default.randomInteger(lengthLimits.z - (length - 1) * dir.z))
 }
 
 const _default = randomStart

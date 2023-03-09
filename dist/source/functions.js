@@ -58,7 +58,7 @@ const _testPointsBetween = _interopRequireDefault(require('./functions/testPoint
 function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
 
 /**
- * @file All of the functionalHelpers matrix functions for working with a grid of points.
+ * @file All of the siFunciona matrix functions for working with a grid of points.
  * @author Joshua Heagle <joshuaheagle@gmail.com>
  * @version 1.0.0
  * @module matrixFunctions

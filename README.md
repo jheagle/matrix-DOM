@@ -10,7 +10,7 @@ Use JSON-DOM to generate grids that can be rendered in the DOM.
 <dd><p>All of the Matrix DOM functions and objects necessary to create DOM Matrices</p>
 </dd>
 <dt><a href="#module_matrixFunctions">matrixFunctions</a></dt>
-<dd><p>All of the functionalHelpers matrix functions for working with a grid of points.</p>
+<dd><p>All of the siFunciona matrix functions for working with a grid of points.</p>
 </dd>
 <dt><a href="#module_matrixObjects">matrixObjects</a></dt>
 <dd><p>Core Matrix objects for representing DOM grid in JSON.</p>
@@ -157,7 +157,7 @@ All methods exported from this module are encapsulated within jsonDom.
 <a name="module_matrixFunctions"></a>
 
 ## matrixFunctions
-All of the functionalHelpers matrix functions for working with a grid of points.
+All of the siFunciona matrix functions for working with a grid of points.
 
 **Version**: 1.0.0  
 **Author**: Joshua Heagle <joshuaheagle@gmail.com>  
@@ -227,7 +227,15 @@ MatrixLayer is the parent of a group of [MatrixTile](#module_matrixObjects..Matr
 <a name="module_matrixObjects..Matrix"></a>
 
 ### matrixObjects~Matrix : <code>module:domObjects~DomItem</code>
-Matrix is a multi-level [module:domObjects~DomItem](module:domObjects~DomItem) which is used to visually represent amathematical grid / matrix.The matrix consists of four DomItem levels, at the top tier is the Matrix container with class matrix.The second tier represents the z axis (with property axis='z') and has the class layer.The third tier represents the y axis (with property axis='y') and has the class row.The fourth (final) tier represents the x axis (with property axis='x') and has the class column.The [MatrixTile](#module_matrixObjects..MatrixTile) is attached on the x axis tier.The number of children at each level is defined by the size of the matrix, the end result is a multidimensionalarray.
+Matrix is a multi-level [module:domObjects~DomItem](module:domObjects~DomItem) which is used to visually represent a
+mathematical grid / matrix.
+The matrix consists of four DomItem levels, at the top tier is the Matrix container with class matrix.
+The second tier represents the z axis (with property axis='z') and has the class layer.
+The third tier represents the y axis (with property axis='y') and has the class row.
+The fourth (final) tier represents the x axis (with property axis='x') and has the class column.
+The [MatrixTile](#module_matrixObjects..MatrixTile) is attached on the x axis tier.
+The number of children at each level is defined by the size of the matrix, the end result is a multidimensional
+array.
 
 **Kind**: inner typedef of [<code>matrixObjects</code>](#module_matrixObjects)  
 **Extends**: <code>module:domObjects~DomItem</code>  
@@ -246,7 +254,8 @@ A number representing a coordinate in a [Matrix](#module_matrixObjects..Matrix)
 <a name="module_matrixObjects..Point"></a>
 
 ### matrixObjects~Point : <code>Object.&lt;module:matrixObjects~axis, module:matrixObjects~coordinate&gt;</code>
-Point stores a location in a [Matrix](#module_matrixObjects..Matrix) defined by three key-value pairs([axis](#module_matrixObjects..axis)=>[coordinate](#module_matrixObjects..coordinate))
+Point stores a location in a [Matrix](#module_matrixObjects..Matrix) defined by three key-value pairs
+([axis](#module_matrixObjects..axis)=>[coordinate](#module_matrixObjects..coordinate))
 
 **Kind**: inner typedef of [<code>matrixObjects</code>](#module_matrixObjects)  
 **Properties**
@@ -274,7 +283,8 @@ Point stores a location in a [Matrix](#module_matrixObjects..Matrix) defined by 
 <a name="module_matrixObjects..MatrixTile"></a>
 
 ### matrixObjects~MatrixTile : <code>Object.&lt;string, module:matrixObjects~Point&gt;</code>
-MatrixTile is an Object which stores a reference a [Point](Point) and can be populated with additionally associatedfields.
+MatrixTile is an Object which stores a reference a [Point](Point) and can be populated with additionally associated
+fields.
 
 **Kind**: inner typedef of [<code>matrixObjects</code>](#module_matrixObjects)  
 **Properties**
@@ -386,7 +396,8 @@ Given two points, compare the x, y, and z of each to see if they are the same
 <a name="bindPointData"></a>
 
 ## bindPointData(item, pnt) ⇒ [<code>MatrixColumn</code>](#module_matrixObjects..MatrixColumn) \| [<code>MatrixRow</code>](#module_matrixObjects..MatrixRow)
-Generate point data for each item in the matrixWARNING: This is a recursive function.
+Generate point data for each item in the matrix
+WARNING: This is a recursive function.
 
 **Kind**: global function  
 
@@ -398,7 +409,8 @@ Generate point data for each item in the matrixWARNING: This is a recursive fun
 <a name="checkInBetween"></a>
 
 ## checkInBetween(...args) ⇒ <code>boolean</code>
-Given two points, check the cells between using specified function.When inclusive is set to true the provided start and end points will also be tested
+Given two points, check the cells between using specified function.
+When inclusive is set to true the provided start and end points will also be tested
 
 **Kind**: global function  
 
@@ -502,7 +514,8 @@ Retrieve the point associated with the provided element.
 <a name="getPointsLine"></a>
 
 ## getPointsLine(start, end, [line]) ⇒ [<code>Array.&lt;Point&gt;</code>](#module_matrixObjects..Point)
-Having provided two points, return an array of transition points connecting 'start' and 'end'. Return arrayincludes 'start' (line[0]) and 'end' (line[line.length-1])
+Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
+includes 'start' (line[0]) and 'end' (line[line.length-1])
 
 **Kind**: global function  
 
@@ -515,7 +528,8 @@ Having provided two points, return an array of transition points connecting 'sta
 <a name="getPointsLines"></a>
 
 ## getPointsLines(lines) ⇒ <code>Array.&lt;Array.&lt;module:matrixObjects~Point&gt;&gt;</code>
-Takes an array of arrays containing two points each. Calls getPointsLine for each array of points. Returns anarray of all points captured for each line segment
+Takes an array of arrays containing two points each. Calls getPointsLine for each array of points. Returns an
+array of all points captured for each line segment
 
 **Kind**: global function  
 
@@ -551,7 +565,8 @@ Based on provided point and point direction generate next point.
 <a name="pointAndCoordinateToDirection"></a>
 
 ## pointAndCoordinateToDirection(pnt, highestCoordinate) ⇒ [<code>Direction</code>](#module_matrixObjects..Direction)
-Given a point and the value of the highest coordinate select the corresponding axis which will be the direction(-1 or 1) to and set the other axis to 0.
+Given a point and the value of the highest coordinate select the corresponding axis which will be the direction
+(-1 or 1) to and set the other axis to 0.
 
 **Kind**: global function  
 
@@ -586,7 +601,8 @@ Having a point, convert it to a direction where the axis with the highest coordi
 <a name="pointsToDirection"></a>
 
 ## pointsToDirection(start, end) ⇒ [<code>Direction</code>](#module_matrixObjects..Direction)
-Retrieve a directional coordinate value based on two provided points(directions consist of two zero coordinates and a single coordinate of 1 / -1)
+Retrieve a directional coordinate value based on two provided points
+(directions consist of two zero coordinates and a single coordinate of 1 / -1)
 
 **Kind**: global function  
 
@@ -622,7 +638,8 @@ Generate a random starting point for a line with the provided length and directi
 <a name="testPointsBetween"></a>
 
 ## testPointsBetween(start, end, matrix, func, [inclusive]) ⇒ <code>Object.&lt;string, Array.&lt;module:matrixObjects~Point&gt;&gt;</code>
-Given a start and end point, test the points between with the provided function. Return the points as part of trueand / or false properties based on the test.
+Given a start and end point, test the points between with the provided function. Return the points as part of true
+and / or false properties based on the test.
 
 **Kind**: global function  
 

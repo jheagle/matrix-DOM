@@ -24,7 +24,7 @@ function _defineProperty (obj, key, value) { if (key in obj) { Object.defineProp
  */
 const pointAndCoordinateToDirection = function pointAndCoordinateToDirection (pnt, highestCoordinate) {
   return (function (axis) {
-    return axis !== false ? functionalHelpers.mergeObjects((0, _point.default)(0, 0, 0), _defineProperty({}, ''.concat(axis), highestCoordinate > 0 ? 1 : -1)) : (0, _point.default)(0, 0, 0)
+    return axis !== false ? siFunciona.mergeObjects((0, _point.default)(0, 0, 0), _defineProperty({}, ''.concat(axis), highestCoordinate > 0 ? 1 : -1)) : (0, _point.default)(0, 0, 0)
   }((0, _getFirstAxisOfCoordinate.default)(pnt, highestCoordinate)))
 }
 

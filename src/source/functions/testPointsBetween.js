@@ -1,5 +1,5 @@
 import 'core-js/stable'
-import functionalHelpers from 'functional-helpers'
+import siFunciona from 'si-funciona'
 import getPointsLine from './getPointsLine'
 
 /**
@@ -25,7 +25,7 @@ const testPointsBetween = (start, end, matrix, func, inclusive = true) =>
   getPointsLine(start, end).filter(
     (prop, i, line) => ((i !== 0 && i !== line.length - 1) || inclusive)
   ).reduce(
-    (newPoints, next) => functionalHelpers.mergeObjects(
+    (newPoints, next) => siFunciona.mergeObjects(
       newPoints,
       { [`${func(next, matrix)}`]: [next] }
     ),

@@ -1,5 +1,5 @@
 import 'core-js/stable'
-import functionalHelpers from 'functional-helpers'
+import siFunciona from 'si-funciona'
 import point from '../objects/point'
 
 /**
@@ -9,7 +9,7 @@ import point from '../objects/point'
  * @returns {module:matrixObjects~Direction}
  */
 const randDirection = (useCoordinates = []) => useCoordinates.length
-  ? useCoordinates[functionalHelpers.randomInteger(useCoordinates.length)]
+  ? useCoordinates[siFunciona.randomInteger(useCoordinates.length)]
   : point(0, 0, 0)
 
 export default randDirection
