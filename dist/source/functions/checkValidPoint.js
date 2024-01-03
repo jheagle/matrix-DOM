@@ -4,9 +4,7 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-
 require('core-js/stable')
-
 /**
  * Test if the provided point exists in the matrix.
  * @function
@@ -14,9 +12,5 @@ require('core-js/stable')
  * @param {module:matrixObjects~Matrix} matrix - The matrix that contains valid points.
  * @returns {boolean}
  */
-const checkValidPoint = function checkValidPoint (pnt, matrix) {
-  return !!matrix.children[pnt.z] && !!matrix.children[pnt.z].children[pnt.y] && !!matrix.children[pnt.z].children[pnt.y].children[pnt.x] && !!matrix.children[pnt.z].children[pnt.y].children[pnt.x].point
-}
-
-const _default = checkValidPoint
-exports.default = _default
+const checkValidPoint = (pnt, matrix) => !!matrix.children[pnt.z] && !!matrix.children[pnt.z].children[pnt.y] && !!matrix.children[pnt.z].children[pnt.y].children[pnt.x] && !!matrix.children[pnt.z].children[pnt.y].children[pnt.x].point
+var _default = exports.default = checkValidPoint

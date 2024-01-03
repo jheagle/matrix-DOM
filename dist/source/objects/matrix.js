@@ -1,52 +1,13 @@
 'use strict'
 
-require('core-js/modules/es.symbol.js')
-
-require('core-js/modules/es.symbol.description.js')
-
-require('core-js/modules/es.object.to-string.js')
-
-require('core-js/modules/es.symbol.iterator.js')
-
-require('core-js/modules/es.array.iterator.js')
-
-require('core-js/modules/es.string.iterator.js')
-
-require('core-js/modules/web.dom-collections.iterator.js')
-
-require('core-js/modules/es.array.from.js')
-
-require('core-js/modules/es.array.slice.js')
-
-require('core-js/modules/es.function.name.js')
-
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-
-require('core-js/modules/es.array.concat.js')
-
 require('core-js/stable')
-
-const _siFunciona = _interopRequireDefault(require('si-funciona'))
-
-const _jsonDom = _interopRequireDefault(require('json-dom'))
-
+var _siFunciona = _interopRequireDefault(require('si-funciona'))
+var _jsonDom = _interopRequireDefault(require('json-dom'))
 function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
-
-function _toConsumableArray (arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread() }
-
-function _nonIterableSpread () { throw new TypeError('Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.') }
-
-function _unsupportedIterableToArray (o, minLen) { if (!o) return; if (typeof o === 'string') return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === 'Object' && o.constructor) n = o.constructor.name; if (n === 'Map' || n === 'Set') return Array.from(o); if (n === 'Arguments' || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen) }
-
-function _iterableToArray (iter) { if (typeof Symbol !== 'undefined' && iter[Symbol.iterator] != null || iter['@@iterator'] != null) return Array.from(iter) }
-
-function _arrayWithoutHoles (arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr) }
-
-function _arrayLikeToArray (arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i] } return arr2 }
-
 /**
  * MatrixColumn is a DomItem which represents the x axis and also stores {@link module:matrixObjects~MatrixTile}
  * @typedef {
@@ -99,55 +60,47 @@ function _arrayLikeToArray (arr, len) { if (len == null || len > arr.length) len
  * @param {Array.<module:matrixObjects~Matrix>} matrixProps - Properties to be added to the matrix
  * @returns {module:matrixObjects~Matrix}
  */
-const matrix = function matrix () {
-  const x = arguments.length > 0 && arguments[0] !== undefined
-    ? arguments[0]
-    : {
-        coordinate: 0,
-        props: []
-      }
-  const y = arguments.length > 1 && arguments[1] !== undefined
-    ? arguments[1]
-    : {
-        coordinate: 0,
-        props: []
-      }
-  const z = arguments.length > 2 && arguments[2] !== undefined
-    ? arguments[2]
-    : {
-        coordinate: 1,
-        props: []
-      }
+const matrix = function () {
+  const x = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    coordinate: 0,
+    props: []
+  }
+  const y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    coordinate: 0,
+    props: []
+  }
+  const z = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {
+    coordinate: 1,
+    props: []
+  }
   const matrixProps = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : []
-  return _siFunciona.default.mergeObjects.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
+  return _siFunciona.default.mergeObjects(_jsonDom.default.createDomItem({
     tagName: 'div',
     attributes: {
       className: 'matrix'
     },
-    children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
+    children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable(_jsonDom.default.createDomItem({
       axis: 'z',
       tagName: 'div',
       attributes: {
         className: 'layer'
       },
-      children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
+      children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable(_jsonDom.default.createDomItem({
         axis: 'y',
         tagName: 'div',
         attributes: {
           className: 'row'
         },
-        children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable.apply(_siFunciona.default, [_jsonDom.default.createDomItem({
+        children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable(_jsonDom.default.createDomItem({
           axis: 'x',
           tagName: 'div',
           attributes: {
             className: 'column'
           },
           children: []
-        })].concat(_toConsumableArray(x.props))), x.coordinate)
-      })].concat(_toConsumableArray(y.props))), y.coordinate)
-    })].concat(_toConsumableArray(z.props))), z.coordinate)
-  })].concat(_toConsumableArray(matrixProps)))
+        }), ...x.props), x.coordinate)
+      }), ...y.props), y.coordinate)
+    }), ...z.props), z.coordinate)
+  }), ...matrixProps)
 }
-
-const _default = matrix
-exports.default = _default
+var _default = exports.default = matrix

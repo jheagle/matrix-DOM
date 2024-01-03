@@ -4,21 +4,15 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-
-require('core-js/modules/es.array.reduce.js')
-
-require('core-js/modules/es.array.filter.js')
-
+require('core-js/modules/esnext.async-iterator.reduce.js')
+require('core-js/modules/esnext.iterator.constructor.js')
+require('core-js/modules/esnext.iterator.reduce.js')
+require('core-js/modules/esnext.async-iterator.filter.js')
+require('core-js/modules/esnext.iterator.filter.js')
 require('core-js/stable')
-
-const _siFunciona = _interopRequireDefault(require('si-funciona'))
-
-const _getPointsLine = _interopRequireDefault(require('./getPointsLine'))
-
+var _siFunciona = _interopRequireDefault(require('si-funciona'))
+var _getPointsLine = _interopRequireDefault(require('./getPointsLine'))
 function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
-
-function _defineProperty (obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }) } else { obj[key] = value } return obj }
-
 /**
  * Function that produces a property of the new Object, taking three arguments
  * @callback module:matrixFunctions~testPointStatus
@@ -38,17 +32,13 @@ function _defineProperty (obj, key, value) { if (key in obj) { Object.defineProp
  * @param {boolean} [inclusive=true] - Choose whether to include or exclude the start and end points in the results.
  * @returns {Object.<string, Array.<module:matrixObjects~Point>>}
  */
-const testPointsBetween = function testPointsBetween (start, end, matrix, func) {
+const testPointsBetween = function (start, end, matrix, func) {
   const inclusive = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true
-  return (0, _getPointsLine.default)(start, end).filter(function (prop, i, line) {
-    return i !== 0 && i !== line.length - 1 || inclusive
-  }).reduce(function (newPoints, next) {
-    return _siFunciona.default.mergeObjects(newPoints, _defineProperty({}, ''.concat(func(next, matrix)), [next]))
-  }, {
+  return (0, _getPointsLine.default)(start, end).filter((prop, i, line) => i !== 0 && i !== line.length - 1 || inclusive).reduce((newPoints, next) => _siFunciona.default.mergeObjects(newPoints, {
+    [`${func(next, matrix)}`]: [next]
+  }), {
     true: [],
     false: []
   })
 }
-
-const _default = testPointsBetween
-exports.default = _default
+var _default = exports.default = testPointsBetween

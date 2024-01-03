@@ -4,15 +4,10 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-
 require('core-js/stable')
-
-const _siFunciona = _interopRequireDefault(require('si-funciona'))
-
-const _point = _interopRequireDefault(require('../objects/point'))
-
+var _siFunciona = _interopRequireDefault(require('si-funciona'))
+var _point = _interopRequireDefault(require('../objects/point'))
 function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
-
 /**
  * Generate a random starting point for a line with the provided length and direction.
  * @function
@@ -21,10 +16,8 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
  * @param {module:matrixObjects~Point} [lengthLimits={x: 10, y: 10, z: 10}] - The maximum grid size.
  * @returns {module:matrixObjects~Point}
  */
-const randomStart = function randomStart (length, dir) {
+const randomStart = function (length, dir) {
   const lengthLimits = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : (0, _point.default)(10, 10, 10)
   return (0, _point.default)(_siFunciona.default.randomInteger(lengthLimits.x - (length - 1) * dir.x), _siFunciona.default.randomInteger(lengthLimits.y - (length - 1) * dir.y), _siFunciona.default.randomInteger(lengthLimits.z - (length - 1) * dir.z))
 }
-
-const _default = randomStart
-exports.default = _default
+var _default = exports.default = randomStart

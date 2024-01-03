@@ -4,9 +4,7 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-
 require('core-js/stable')
-
 /**
  * A string representing an axis: x, y, z
  * @typedef {string} module:matrixObjects~axis
@@ -45,7 +43,7 @@ require('core-js/stable')
  * {@link module:matrixObjects~Matrix})
  * @returns {module:matrixObjects~Point}
  */
-const point = function point (x, y) {
+const point = function (x, y) {
   const z = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0
   return {
     x: x,
@@ -53,6 +51,4 @@ const point = function point (x, y) {
     z: z
   }
 }
-
-const _default = point
-exports.default = _default
+var _default = exports.default = point

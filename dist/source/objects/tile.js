@@ -4,9 +4,7 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-
 require('core-js/stable')
-
 /**
  * MatrixTile is an Object which stores a reference a {@link Point} and can be populated with additionally associated
  * fields.
@@ -21,11 +19,7 @@ require('core-js/stable')
  * @function
  * @returns {module:matrixObjects~MatrixTile}
  */
-const tile = function tile () {
-  return {
-    point: {}
-  }
-}
-
-const _default = tile
-exports.default = _default
+const tile = () => ({
+  point: {}
+})
+var _default = exports.default = tile

@@ -4,13 +4,9 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-
 require('core-js/stable')
-
-const _matrix = _interopRequireDefault(require('./matrix'))
-
+var _matrix = _interopRequireDefault(require('./matrix'))
 function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
-
 /**
  * Return a single layer matrix where x and y are equal
  * @function
@@ -22,17 +18,13 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
  * @param {number} size - Used to define height and width as equal values (depth is set to 1)
  * @returns {module:matrixObjects~Matrix}
  */
-const square = function square () {
-  const _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}
-  const _ref$x = _ref.x
-  const x = _ref$x === void 0 ? [] : _ref$x
-  const _ref$y = _ref.y
-  const y = _ref$y === void 0 ? [] : _ref$y
-  const _ref$z = _ref.z
-  const z = _ref$z === void 0 ? [] : _ref$z
-  const _ref$matrixProps = _ref.matrixProps
-  const matrixProps = _ref$matrixProps === void 0 ? [] : _ref$matrixProps
-
+const square = function () {
+  const {
+    x = [],
+    y = [],
+    z = [],
+    matrixProps = []
+  } = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}
   const size = arguments.length > 1 ? arguments[1] : undefined
   return (0, _matrix.default)({
     coordinate: size,
@@ -45,6 +37,4 @@ const square = function square () {
     props: z
   }, matrixProps)
 }
-
-const _default = square
-exports.default = _default
+var _default = exports.default = square

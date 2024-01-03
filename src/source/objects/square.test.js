@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import square from '../../src/source/objects/square'
+import square from './square'
 
 test('grid is 1 deep, and 10 by 10', () => {
   const grid = square({}, 10)

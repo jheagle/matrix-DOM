@@ -4,13 +4,10 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-
-require('core-js/modules/es.array.filter.js')
-
-require('core-js/modules/es.object.keys.js')
-
+require('core-js/modules/esnext.async-iterator.filter.js')
+require('core-js/modules/esnext.iterator.constructor.js')
+require('core-js/modules/esnext.iterator.filter.js')
 require('core-js/stable')
-
 /**
  * Having provided a coordinate number, find all corresponding axis, return the first match.
  * @function
@@ -18,11 +15,5 @@ require('core-js/stable')
  * @param {module:matrixObjects~coordinate} coordinate - The coordinate to search for.
  * @returns {false|module:matrixObjects~axis}
  */
-const getFirstAxisOfCoordinate = function getFirstAxisOfCoordinate (pnt, coordinate) {
-  return Object.keys(pnt).filter(function (key) {
-    return pnt[key] === coordinate
-  })[0] || false
-}
-
-const _default = getFirstAxisOfCoordinate
-exports.default = _default
+const getFirstAxisOfCoordinate = (pnt, coordinate) => Object.keys(pnt).filter(key => pnt[key] === coordinate)[0] || false
+var _default = exports.default = getFirstAxisOfCoordinate
