@@ -1,3 +1,5 @@
 module.exports = {
-  browserName: 'matrix-dom',
+  browser: {
+    name: 'matrix-dom'
+  },
 }
