@@ -35,7 +35,7 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
 const testPointsBetween = function (start, end, matrix, func) {
   const inclusive = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true
   return (0, _getPointsLine.default)(start, end).filter((prop, i, line) => i !== 0 && i !== line.length - 1 || inclusive).reduce((newPoints, next) => _siFunciona.default.mergeObjects(newPoints, {
-    [`${func(next, matrix)}`]: [next]
+    [''.concat(func(next, matrix))]: [next]
   }), {
     true: [],
     false: []

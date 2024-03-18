@@ -16,6 +16,6 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
  * @returns {module:matrixObjects~Direction}
  */
 const pointAndCoordinateToDirection = (pnt, highestCoordinate) => (axis => axis !== false ? siFunciona.mergeObjects((0, _point.default)(0, 0, 0), {
-  [`${axis}`]: highestCoordinate > 0 ? 1 : -1
+  [''.concat(axis)]: highestCoordinate > 0 ? 1 : -1
 }) : (0, _point.default)(0, 0, 0))((0, _getFirstAxisOfCoordinate.default)(pnt, highestCoordinate))
 var _default = exports.default = pointAndCoordinateToDirection
