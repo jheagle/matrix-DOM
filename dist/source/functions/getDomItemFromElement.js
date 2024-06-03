@@ -7,7 +7,7 @@ exports.default = void 0
 require('core-js/stable')
 var _getDomItemFromPoint = _interopRequireDefault(require('./getDomItemFromPoint'))
 var _getPointFromElement = _interopRequireDefault(require('./getPointFromElement'))
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
+function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Retrieve the DomItem associated with the provided element in the matrix
  * @function

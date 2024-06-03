@@ -7,7 +7,7 @@ exports.default = void 0
 require('core-js/stable')
 var _point = _interopRequireDefault(require('../objects/point'))
 var _getFirstAxisOfCoordinate = _interopRequireDefault(require('./getFirstAxisOfCoordinate'))
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
+function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Given a point and the value of the highest coordinate select the corresponding axis which will be the direction
  * (-1 or 1) to and set the other axis to 0.
@@ -16,6 +16,6 @@ function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { d
  * @returns {module:matrixObjects~Direction}
  */
 const pointAndCoordinateToDirection = (pnt, highestCoordinate) => (axis => axis !== false ? siFunciona.mergeObjects((0, _point.default)(0, 0, 0), {
-  [''.concat(axis)]: highestCoordinate > 0 ? 1 : -1
+  [`${axis}`]: highestCoordinate > 0 ? 1 : -1
 }) : (0, _point.default)(0, 0, 0))((0, _getFirstAxisOfCoordinate.default)(pnt, highestCoordinate))
 var _default = exports.default = pointAndCoordinateToDirection

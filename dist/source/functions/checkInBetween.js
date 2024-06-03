@@ -4,10 +4,9 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-require('core-js/modules/web.dom-collections.iterator.js')
 require('core-js/stable')
 var _testPointsBetween = _interopRequireDefault(require('./testPointsBetween'))
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
+function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Given two points, check the cells between using specified function.
  * When inclusive is set to true the provided start and end points will also be tested

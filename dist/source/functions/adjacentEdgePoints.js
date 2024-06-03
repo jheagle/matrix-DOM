@@ -13,7 +13,7 @@ require('core-js/stable')
 var _point = _interopRequireDefault(require('../objects/point'))
 var _nextCell = _interopRequireDefault(require('./nextCell'))
 var _checkValidPoint = _interopRequireDefault(require('./checkValidPoint'))
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
+function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Return all points which touch on edges (not diagonal)
  * @function

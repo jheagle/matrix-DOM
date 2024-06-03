@@ -29,7 +29,7 @@ var _pointsToDirection = _interopRequireDefault(require('./functions/pointsToDir
 var _randDirection = _interopRequireDefault(require('./functions/randDirection'))
 var _randomStart = _interopRequireDefault(require('./functions/randomStart'))
 var _testPointsBetween = _interopRequireDefault(require('./functions/testPointsBetween'))
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
+function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * @file All of the siFunciona matrix functions for working with a grid of points.
  * @author Joshua Heagle <joshuaheagle@gmail.com>

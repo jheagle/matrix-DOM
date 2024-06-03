@@ -7,10 +7,9 @@ exports.default = void 0
 require('core-js/modules/esnext.async-iterator.reduce.js')
 require('core-js/modules/esnext.iterator.constructor.js')
 require('core-js/modules/esnext.iterator.reduce.js')
-require('core-js/modules/web.dom-collections.iterator.js')
 require('core-js/stable')
 var _getPointsLine = _interopRequireDefault(require('./getPointsLine'))
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
+function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Takes an array of arrays containing two points each. Calls getPointsLine for each array of points. Returns an
  * array of all points captured for each line segment

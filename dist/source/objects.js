@@ -10,7 +10,7 @@ var _matrix = _interopRequireDefault(require('./objects/matrix'))
 var _point = _interopRequireDefault(require('./objects/point'))
 var _square = _interopRequireDefault(require('./objects/square'))
 var _tile = _interopRequireDefault(require('./objects/tile'))
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
+function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * @file Core Matrix objects for representing DOM grid in JSON.
  * @author Joshua Heagle <joshuaheagle@gmail.com>

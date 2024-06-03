@@ -8,7 +8,7 @@ require('core-js/stable')
 var _areEqualPoints = _interopRequireDefault(require('./areEqualPoints'))
 var _nextCell = _interopRequireDefault(require('./nextCell'))
 var _pointsToDirection = _interopRequireDefault(require('./pointsToDirection'))
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
+function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
  * includes 'start' (line[0]) and 'end' (line[line.length-1])

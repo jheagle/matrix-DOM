@@ -7,7 +7,7 @@ exports.default = void 0
 require('core-js/stable')
 var _siFunciona = _interopRequireDefault(require('si-funciona'))
 var _point = _interopRequireDefault(require('../objects/point'))
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
+function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Generate a random starting point for a line with the provided length and direction.
  * @function

@@ -7,7 +7,7 @@ exports.default = void 0
 require('core-js/stable')
 var _pointToDirection = _interopRequireDefault(require('./pointToDirection'))
 var _pointDifference = _interopRequireDefault(require('./pointDifference'))
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
+function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Retrieve a directional coordinate value based on two provided points
  * (directions consist of two zero coordinates and a single coordinate of 1 / -1)

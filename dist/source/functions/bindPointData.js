@@ -9,7 +9,7 @@ require('core-js/modules/esnext.iterator.map.js')
 require('core-js/stable')
 var _siFunciona = _interopRequireDefault(require('si-funciona'))
 var _point = _interopRequireDefault(require('../objects/point'))
-function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj } }
+function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Generate point data for each item in the matrix
  * WARNING: This is a recursive function.
