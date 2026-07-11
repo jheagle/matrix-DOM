@@ -4,8 +4,6 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-require('core-js/modules/esnext.async-iterator.filter.js')
-require('core-js/modules/esnext.async-iterator.reduce.js')
 require('core-js/modules/esnext.iterator.constructor.js')
 require('core-js/modules/esnext.iterator.filter.js')
 require('core-js/modules/esnext.iterator.reduce.js')
@@ -35,7 +33,7 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
 const testPointsBetween = function (start, end, matrix, func) {
   const inclusive = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true
   return (0, _getPointsLine.default)(start, end).filter((prop, i, line) => i !== 0 && i !== line.length - 1 || inclusive).reduce((newPoints, next) => _siFunciona.default.mergeObjects(newPoints, {
-    [`${func(next, matrix)}`]: [next]
+    [''.concat(func(next, matrix))]: [next]
   }), {
     true: [],
     false: []

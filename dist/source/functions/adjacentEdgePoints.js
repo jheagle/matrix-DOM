@@ -4,11 +4,8 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-require('core-js/modules/esnext.async-iterator.filter.js')
-require('core-js/modules/esnext.async-iterator.map.js')
 require('core-js/modules/esnext.iterator.constructor.js')
 require('core-js/modules/esnext.iterator.filter.js')
-require('core-js/modules/esnext.iterator.map.js')
 require('core-js/stable')
 var _point = _interopRequireDefault(require('../objects/point'))
 var _nextCell = _interopRequireDefault(require('./nextCell'))

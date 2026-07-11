@@ -19,12 +19,15 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @returns {module:matrixObjects~Matrix}
  */
 const cube = function () {
-  const {
-    x = [],
-    y = [],
-    z = [],
-    matrixProps = []
-  } = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}
+  const _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}
+  const _ref$x = _ref.x
+  const x = _ref$x === void 0 ? [] : _ref$x
+  const _ref$y = _ref.y
+  const y = _ref$y === void 0 ? [] : _ref$y
+  const _ref$z = _ref.z
+  const z = _ref$z === void 0 ? [] : _ref$z
+  const _ref$matrixProps = _ref.matrixProps
+  const matrixProps = _ref$matrixProps === void 0 ? [] : _ref$matrixProps
   const size = arguments.length > 1 ? arguments[1] : undefined
   return (0, _matrix.default)({
     coordinate: size,
