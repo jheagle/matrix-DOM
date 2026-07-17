@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _matrix = _interopRequireDefault(require('./matrix'))
+var _buildMatrix = _interopRequireDefault(require('../functions/buildMatrix.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Return a single layer matrix where x and y are equal
@@ -14,7 +14,7 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * specified point, requires MatrixTile base
  * @param {Array.<module:matrixObjects~MatrixRow>} [y=[]] - Additional data to append to the MatrixRow
  * @param {Array.<module:matrixObjects~MatrixLayer>} [z=[]] - Additional data to append to the MatrixLayer
- * @param {Array.<module:matrixObjects~Matrix>} [matrixProps=[]] - Additional data to append to the Matrix
+ * @param {Array.<module:matrixObjects~Matrix>} [matrix=[]] - Additional data to append to the Matrix
  * @param {number} size - Used to define height and width as equal values (depth is set to 1)
  * @returns {module:matrixObjects~Matrix}
  */
@@ -26,18 +26,18 @@ const square = function () {
   const y = _ref$y === void 0 ? [] : _ref$y
   const _ref$z = _ref.z
   const z = _ref$z === void 0 ? [] : _ref$z
-  const _ref$matrixProps = _ref.matrixProps
-  const matrixProps = _ref$matrixProps === void 0 ? [] : _ref$matrixProps
+  const _ref$matrix = _ref.matrix
+  const matrix = _ref$matrix === void 0 ? [] : _ref$matrix
   const size = arguments.length > 1 ? arguments[1] : undefined
-  return (0, _matrix.default)({
-    coordinate: size,
-    props: x
+  return (0, _buildMatrix.default)({
+    x: size,
+    y: size,
+    z: 1
   }, {
-    coordinate: size,
-    props: y
-  }, {
-    coordinate: 1,
-    props: z
-  }, matrixProps)
+    x: x,
+    y: y,
+    z: z,
+    matrix: matrix
+  })
 }
 var _default = exports.default = square

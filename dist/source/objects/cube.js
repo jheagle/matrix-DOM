@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _matrix = _interopRequireDefault(require('./matrix'))
+var _buildMatrix = _interopRequireDefault(require('../functions/buildMatrix.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Return a matrix where x, y, and z are equal
@@ -26,18 +26,18 @@ const cube = function () {
   const y = _ref$y === void 0 ? [] : _ref$y
   const _ref$z = _ref.z
   const z = _ref$z === void 0 ? [] : _ref$z
-  const _ref$matrixProps = _ref.matrixProps
-  const matrixProps = _ref$matrixProps === void 0 ? [] : _ref$matrixProps
+  const _ref$matrix = _ref.matrix
+  const matrix = _ref$matrix === void 0 ? [] : _ref$matrix
   const size = arguments.length > 1 ? arguments[1] : undefined
-  return (0, _matrix.default)({
-    coordinate: size,
-    props: x
+  return (0, _buildMatrix.default)({
+    x: size,
+    y: size,
+    z: size
   }, {
-    coordinate: size,
-    props: y
-  }, {
-    coordinate: size,
-    props: z
-  }, matrixProps)
+    x: x,
+    y: y,
+    z: z,
+    matrix: matrix
+  })
 }
 var _default = exports.default = cube

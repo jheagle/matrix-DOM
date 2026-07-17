@@ -22,17 +22,20 @@ Use JSON-DOM to generate grids that can be rendered in the DOM.
 <dt><a href="#tile">tile()</a> ⇒ <code><a href="#module_matrixObjects..MatrixTile">MatrixTile</a></code></dt>
 <dd><p>A default tile in the <a href="#module_matrixObjects..Matrix">Matrix</a></p>
 </dd>
-<dt><a href="#square">square([x], [y], [z], [matrixProps], size)</a> ⇒ <code><a href="#module_matrixObjects..Matrix">Matrix</a></code></dt>
+<dt><a href="#square">square([x], [y], [z], [matrix], size)</a> ⇒ <code><a href="#module_matrixObjects..Matrix">Matrix</a></code></dt>
 <dd><p>Return a single layer matrix where x and y are equal</p>
 </dd>
 <dt><a href="#point">point(x, y, [z])</a> ⇒ <code><a href="#module_matrixObjects..Point">Point</a></code></dt>
 <dd><p>Store the point data for an x, y, z <a href="#module_matrixObjects..Matrix">Matrix</a>.</p>
 </dd>
-<dt><a href="#matrix">matrix(x, y, z, matrixProps)</a> ⇒ <code><a href="#module_matrixObjects..Matrix">Matrix</a></code></dt>
+<dt><a href="#matrix">matrix(dimensions, props)</a> ⇒ <code><a href="#module_matrixObjects..Matrix">Matrix</a></code></dt>
 <dd><p>Create a 3d matrix of i with x by y by z size, add additional objects for each layer as well</p>
 </dd>
 <dt><a href="#cube">cube([x], [y], [z], [matrixProps], size)</a> ⇒ <code><a href="#module_matrixObjects..Matrix">Matrix</a></code></dt>
 <dd><p>Return a matrix where x, y, and z are equal</p>
+</dd>
+<dt><a href="#updateMatrixPoints">updateMatrixPoints(matrix)</a> ⇒ <code><a href="#module_matrixObjects..Matrix">Matrix</a></code></dt>
+<dd><p>Update the points for each DomItem in a matrix.</p>
 </dd>
 <dt><a href="#testPointsBetween">testPointsBetween(start, end, matrix, func, [inclusive])</a> ⇒ <code>Object.&lt;string, Array.&lt;module:matrixObjects~Point&gt;&gt;</code></dt>
 <dd><p>Given a start and end point, test the points between with the provided function. Return the points as part of true
@@ -74,6 +77,9 @@ includes &#39;start&#39; (line[0]) and &#39;end&#39; (line[line.length-1])</p>
 </dd>
 <dt><a href="#getPointFromElement">getPointFromElement(elem)</a> ⇒ <code><a href="#module_matrixObjects..Point">Point</a></code></dt>
 <dd><p>Retrieve the point associated with the provided element.</p>
+</dd>
+<dt><a href="#getPointFromDomItem">getPointFromDomItem(domItem, useIfExists)</a> ⇒ <code><a href="#module_matrixObjects..Point">Point</a></code></dt>
+<dd><p>Retrieve the point associated with the provided DomItem.</p>
 </dd>
 <dt><a href="#getHighestAbsoluteCoordinate">getHighestAbsoluteCoordinate(pnt)</a> ⇒ <code><a href="#module_matrixObjects..coordinate">coordinate</a></code></dt>
 <dd><p>Return the first coordinate number with the highest absolute value.</p>
@@ -183,7 +189,6 @@ MatrixTile is an Object which stores a reference a [Point](Point) and can be pop
 | Name | Type | Description |
 | --- | --- | --- |
 | point | [<code>Point</code>](#module_matrixObjects..Point) | a reference to its location in a [Matrix](#module_matrixObjects..Matrix) |
-| axis | [<code>axis</code>](#module_matrixObjects..axis) | The axis will be 'x' |
 
 <a name="module_matrixObjects..axis"></a>
 
@@ -231,6 +236,13 @@ Point stores a location in a [Matrix](#module_matrixObjects..Matrix) defined by 
 MatrixColumn is a DomItem which represents the x axis and also stores [MatrixTile](#module_matrixObjects..MatrixTile)
 
 **Kind**: inner typedef of [<code>matrixObjects</code>](#module_matrixObjects)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| axis | [<code>axis</code>](#module_matrixObjects..axis) | The axis will be 'x' |
+| is | <code>module:domObjects~DomItem:is</code> | The is will be 'column' |
+
 <a name="module_matrixObjects..MatrixRow"></a>
 
 ### matrixObjects~MatrixRow : <code>module:domObjects~DomItem</code>
@@ -242,6 +254,7 @@ MatrixRow is the parent of a group of [MatrixTile](#module_matrixObjects..Matrix
 | Name | Type | Description |
 | --- | --- | --- |
 | axis | [<code>axis</code>](#module_matrixObjects..axis) | The axis will be 'y' |
+| is | <code>module:domObjects~DomItem:is</code> | The is will be 'row' |
 | children | [<code>Array.&lt;MatrixColumn&gt;</code>](#module_matrixObjects..MatrixColumn) | all of the MatrixTile items as part of this MatrixRow |
 
 <a name="module_matrixObjects..MatrixLayer"></a>
@@ -254,7 +267,8 @@ MatrixLayer is the parent of a group of [MatrixTile](#module_matrixObjects..Matr
 
 | Name | Type | Description |
 | --- | --- | --- |
-| axis | [<code>axis</code>](#module_matrixObjects..axis) | The axis will be 'y' |
+| axis | [<code>axis</code>](#module_matrixObjects..axis) | The axis will be 'z' |
+| is | <code>module:domObjects~DomItem:is</code> | The is will be 'layer' |
 | children | [<code>Array.&lt;MatrixRow&gt;</code>](#module_matrixObjects..MatrixRow) | all of the MatrixRow items as part of this MatrixLayer |
 
 <a name="module_matrixObjects..Matrix"></a>
@@ -264,6 +278,12 @@ Matrix is a multi-level [module:domObjects~DomItem](module:domObjects~DomItem) w
 
 **Kind**: inner typedef of [<code>matrixObjects</code>](#module_matrixObjects)  
 **Extends**: <code>module:domObjects~DomItem</code>  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| is | <code>module:domObjects~DomItem:is</code> | The is will be 'matrix' |
+
 <a name="module_matrixFunctions"></a>
 
 ## matrixFunctions
@@ -291,7 +311,7 @@ A default tile in the [Matrix](#module_matrixObjects..Matrix)
 **Kind**: global function  
 <a name="square"></a>
 
-## square([x], [y], [z], [matrixProps], size) ⇒ [<code>Matrix</code>](#module_matrixObjects..Matrix)
+## square([x], [y], [z], [matrix], size) ⇒ [<code>Matrix</code>](#module_matrixObjects..Matrix)
 Return a single layer matrix where x and y are equal
 
 **Kind**: global function  
@@ -301,7 +321,7 @@ Return a single layer matrix where x and y are equal
 | [x] | [<code>Array.&lt;MatrixTile&gt;</code>](#module_matrixObjects..MatrixTile) | <code>[]</code> | All the data to be presented as part of the specified point, requires MatrixTile base |
 | [y] | [<code>Array.&lt;MatrixRow&gt;</code>](#module_matrixObjects..MatrixRow) | <code>[]</code> | Additional data to append to the MatrixRow |
 | [z] | [<code>Array.&lt;MatrixLayer&gt;</code>](#module_matrixObjects..MatrixLayer) | <code>[]</code> | Additional data to append to the MatrixLayer |
-| [matrixProps] | [<code>Array.&lt;Matrix&gt;</code>](#module_matrixObjects..Matrix) | <code>[]</code> | Additional data to append to the Matrix |
+| [matrix] | [<code>Array.&lt;Matrix&gt;</code>](#module_matrixObjects..Matrix) | <code>[]</code> | Additional data to append to the Matrix |
 | size | <code>number</code> |  | Used to define height and width as equal values (depth is set to 1) |
 
 <a name="point"></a>
@@ -319,17 +339,22 @@ Store the point data for an x, y, z [Matrix](#module_matrixObjects..Matrix).
 
 <a name="matrix"></a>
 
-## matrix(x, y, z, matrixProps) ⇒ [<code>Matrix</code>](#module_matrixObjects..Matrix)
+## matrix(dimensions, props) ⇒ [<code>Matrix</code>](#module_matrixObjects..Matrix)
 Create a 3d matrix of i with x by y by z size, add additional objects for each layer as well
 
 **Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| x | <code>Object</code> | Properties and a coordinate defining the width of the matrix. |
-| y | <code>Object</code> | Properties and a coordinate defining the height of the matrix. |
-| z | <code>Object</code> | Properties and a coordinate defining the depth of the matrix. |
-| matrixProps | [<code>Array.&lt;Matrix&gt;</code>](#module_matrixObjects..Matrix) | Properties to be added to the matrix |
+| dimensions | [<code>Point</code>](#module_matrixObjects..Point) | The dimensions of the matrix to be created |
+| dimensions.x | [<code>coordinate</code>](#module_matrixObjects..coordinate) | The width of the matrix |
+| dimensions.y | [<code>coordinate</code>](#module_matrixObjects..coordinate) | The height of the matrix |
+| dimensions.z | [<code>coordinate</code>](#module_matrixObjects..coordinate) | The depth of the matrix |
+| props | <code>Object</code> | Additional properties to be added to the matrix |
+| props.x | [<code>Array.&lt;MatrixTile&gt;</code>](#module_matrixObjects..MatrixTile) | Additional properties to be added to the x axis |
+| props.y | [<code>Array.&lt;MatrixRow&gt;</code>](#module_matrixObjects..MatrixRow) | Additional properties to be added to the y axis |
+| props.z | [<code>Array.&lt;MatrixLayer&gt;</code>](#module_matrixObjects..MatrixLayer) | Additional properties to be added to the z axis |
+| props.matrix | [<code>Array.&lt;Matrix&gt;</code>](#module_matrixObjects..Matrix) | Additional properties to be added to the matrix |
 
 <a name="cube"></a>
 
@@ -345,6 +370,17 @@ Return a matrix where x, y, and z are equal
 | [z] | [<code>Array.&lt;MatrixLayer&gt;</code>](#module_matrixObjects..MatrixLayer) | <code>[]</code> | Additional data to append to the MatrixLayer |
 | [matrixProps] | [<code>Array.&lt;Matrix&gt;</code>](#module_matrixObjects..Matrix) | <code>[]</code> | Additional data to append to the Matrix |
 | size | <code>number</code> |  | Used to define height, width, and depth as equal values |
+
+<a name="updateMatrixPoints"></a>
+
+## updateMatrixPoints(matrix) ⇒ [<code>Matrix</code>](#module_matrixObjects..Matrix)
+Update the points for each DomItem in a matrix.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| matrix | [<code>Matrix</code>](#module_matrixObjects..Matrix) | Provide a matrix to update the points for. |
 
 <a name="testPointsBetween"></a>
 
@@ -491,6 +527,18 @@ Retrieve the point associated with the provided element.
 | Param | Type | Description |
 | --- | --- | --- |
 | elem | <code>Node</code> \| <code>HTMLElement</code> | Provide an element associated with a point. |
+
+<a name="getPointFromDomItem"></a>
+
+## getPointFromDomItem(domItem, useIfExists) ⇒ [<code>Point</code>](#module_matrixObjects..Point)
+Retrieve the point associated with the provided DomItem.
+
+**Kind**: global function  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| domItem | <code>DomItem</code> |  | Provide a DomItem associated with a point. |
+| useIfExists | <code>boolean</code> | <code>true</code> | Whether to use the existing point if it exists. |
 
 <a name="getHighestAbsoluteCoordinate"></a>
 

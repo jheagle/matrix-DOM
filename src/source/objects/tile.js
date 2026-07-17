@@ -1,12 +1,11 @@
 import 'core-js/stable'
+import point from './point.js'
 
 /**
  * MatrixTile is an Object which stores a reference a {@link Point} and can be populated with additionally associated
  * fields.
  * @typedef {Object.<string, module:matrixObjects~Point>} module:matrixObjects~MatrixTile
- * @property {module:matrixObjects~Point} point - a reference to its location in a
- * {@link module:matrixObjects~Matrix}
- * @property {module:matrixObjects~axis} axis - The axis will be 'x'
+ * @property {module:matrixObjects~Point} point - a reference to its location in a {@link module:matrixObjects~Matrix}
  */
 
 /**

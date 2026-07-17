@@ -4,22 +4,26 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-require('core-js/modules/web.dom-collections.iterator.js')
 require('core-js/stable')
 var _siFunciona = _interopRequireDefault(require('si-funciona'))
 var _jsonDom = _interopRequireDefault(require('json-dom'))
+var _tile = _interopRequireDefault(require('./tile'))
+var _updateMatrixPoints = _interopRequireDefault(require('../functions/updateMatrixPoints.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * MatrixColumn is a DomItem which represents the x axis and also stores {@link module:matrixObjects~MatrixTile}
  * @typedef {
  * module:domObjects~DomItem|module:matrixObjects~MatrixTile
  * } module:matrixObjects~MatrixColumn
+ * @property {module:matrixObjects~axis} axis - The axis will be 'x'
+ * @property {module:domObjects~DomItem:is} is - The is will be 'column'
  */
 
 /**
  * MatrixRow is the parent of a group of {@link module:matrixObjects~MatrixTile}
  * @typedef {module:domObjects~DomItem} module:matrixObjects~MatrixRow
  * @property {module:matrixObjects~axis} axis - The axis will be 'y'
+ * @property {module:domObjects~DomItem:is} is - The is will be 'row'
  * @property {Array.<module:matrixObjects~MatrixColumn>} children - all of the MatrixTile items as part of this
  * MatrixRow
  */
@@ -27,7 +31,8 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
 /**
  * MatrixLayer is the parent of a group of {@link module:matrixObjects~MatrixTile}
  * @typedef {module:domObjects~DomItem} module:matrixObjects~MatrixLayer
- * @property {module:matrixObjects~axis} axis - The axis will be 'y'
+ * @property {module:matrixObjects~axis} axis - The axis will be 'z'
+ * @property {module:domObjects~DomItem:is} is - The is will be 'layer'
  * @property {Array.<module:matrixObjects~MatrixRow>} children - all of the MatrixRow items as part of this
  * MatrixLayer
  */
@@ -44,64 +49,66 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * array.
  * @typedef {module:domObjects~DomItem} module:matrixObjects~Matrix
  * @augments module:domObjects~DomItem
+ * @property {module:domObjects~DomItem:is} is - The is will be 'matrix'
  */
 
 /**
  * Create a 3d matrix of i with x by y by z size, add additional objects for each layer as well
  * @function
- * @param {
- * {coordinate: module:matrixObjects~coordinate, props: Array.<module:matrixObjects~MatrixTile>}
- * } x - Properties and a coordinate defining the width of the matrix.
- * @param {
- * {coordinate: module:matrixObjects~coordinate, props: Array.<module:matrixObjects~MatrixRow>}
- * } y - Properties and a coordinate defining the height of the matrix.
- * @param {
- * {coordinate: module:matrixObjects~coordinate, props: Array.<module:matrixObjects~MatrixLayer>}
- * } z - Properties and a coordinate defining the depth of the matrix.
- * @param {Array.<module:matrixObjects~Matrix>} matrixProps - Properties to be added to the matrix
+ * @param {module:matrixObjects~Point} dimensions - The dimensions of the matrix to be created
+ * @param {module:matrixObjects~coordinate} dimensions.x - The width of the matrix
+ * @param {module:matrixObjects~coordinate} dimensions.y - The height of the matrix
+ * @param {module:matrixObjects~coordinate} dimensions.z - The depth of the matrix
+ * @param {Object} props - Additional properties to be added to the matrix
+ * @param {Array.<module:matrixObjects~MatrixTile>} props.x - Additional properties to be added to the x axis
+ * @param {Array.<module:matrixObjects~MatrixRow>} props.y - Additional properties to be added to the y axis
+ * @param {Array.<module:matrixObjects~MatrixLayer>} props.z - Additional properties to be added to the z axis
+ * @param {Array.<module:matrixObjects~Matrix>} props.matrix - Additional properties to be added to the matrix
  * @returns {module:matrixObjects~Matrix}
  */
 const matrix = function () {
-  const x = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    coordinate: 0,
-    props: []
+  const dimensions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    x: 0,
+    y: 0,
+    z: 1
   }
-  const y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
-    coordinate: 0,
-    props: []
+  const props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    x: [],
+    y: [],
+    z: [],
+    matrix: []
   }
-  const z = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {
-    coordinate: 1,
-    props: []
-  }
-  const matrixProps = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : []
   return _siFunciona.default.mergeObjects(_jsonDom.default.createDomItem({
+    is: 'matrix',
     tagName: 'div',
     attributes: {
       className: 'matrix'
     },
     children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable(_jsonDom.default.createDomItem({
       axis: 'z',
+      is: 'layer',
       tagName: 'div',
       attributes: {
         className: 'layer'
       },
       children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable(_jsonDom.default.createDomItem({
         axis: 'y',
+        is: 'row',
         tagName: 'div',
         attributes: {
           className: 'row'
         },
         children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable(_jsonDom.default.createDomItem({
           axis: 'x',
+          is: 'column',
           tagName: 'div',
           attributes: {
             className: 'column'
           },
           children: []
-        }), ...x.props), x.coordinate)
-      }), ...y.props), y.coordinate)
-    }), ...z.props), z.coordinate)
-  }), ...matrixProps)
+        }), (0, _tile.default)(), props.x), dimensions.x)
+      }), props.y), dimensions.y)
+    }), props.z), dimensions.z)
+  }), props.matrix)
 }
 var _default = exports.default = matrix

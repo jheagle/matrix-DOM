@@ -1,5 +1,5 @@
 import 'core-js/stable'
-import matrix from './matrix'
+import buildMatrix from '../functions/buildMatrix.js'
 
 /**
  * Return a matrix where x, y, and z are equal
@@ -12,11 +12,9 @@ import matrix from './matrix'
  * @param {number} size - Used to define height, width, and depth as equal values
  * @returns {module:matrixObjects~Matrix}
  */
-const cube = ({ x = [], y = [], z = [], matrixProps = [] } = {}, size) => matrix(
-  { coordinate: size, props: x },
-  { coordinate: size, props: y },
-  { coordinate: size, props: z },
-  matrixProps
+const cube = ({ x = [], y = [], z = [], matrix = [] } = {}, size) => buildMatrix(
+  { x: size, y: size, z: size },
+  { x: x, y: y, z: z, matrix: matrix }
 )
 
 export default cube
