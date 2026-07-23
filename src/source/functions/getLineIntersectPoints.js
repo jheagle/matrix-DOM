@@ -1,7 +1,14 @@
 import 'core-js/stable'
 import areEqualPoints from './areEqualPoints'
 import nextCell from './nextCell'
-import pointsToDirection from './pointsToDirection'
+import pointsToStep from './pointsToStep'
+
+const nextIntersect = (direction, start, end, line = []) => {
+  line.push(start)
+  return areEqualPoints(start, end)
+    ? line
+    : nextIntersect(direction, nextCell(start, direction), end, line)
+}
 
 /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
@@ -12,12 +19,12 @@ import pointsToDirection from './pointsToDirection'
  * @param {Array.<module:matrixObjects~Point>} [line=[]] - The resulting line to connect start and end.
  * @returns {Array.<module:matrixObjects~Point>}
  */
-const getPointsLine = (start, end, line = []) => areEqualPoints(start, end)
-  ? line.concat([start])
-  : getPointsLine(
-    nextCell(start, pointsToDirection(start, end)),
-    end,
-    line.concat([start])
-  )
+const getLineIntersectPoints = (start, end, line = []) => {
+  if (areEqualPoints(start, end)) {
+    return line.concat([start])
+  }
+  const simplifiedDirection = pointsToStep(start, end)
+  return nextIntersect(simplifiedDirection, start, end, line)
+}
 
-export default getPointsLine
+export default getLineIntersectPoints

@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "json-dom": "github:jheagle/json-dom",
-    "si-funciona": "^2.2.16"
+    "si-funciona": "^2.3.1"
   },
   "directories": {
     "test": "tests"

@@ -1,4 +1,5 @@
 import 'core-js/stable'
+import siFunciona from 'si-funciona'
 import point from '../objects/point'
 import getFirstAxisOfCoordinate from './getFirstAxisOfCoordinate'
 

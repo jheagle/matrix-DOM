@@ -21,15 +21,14 @@ import getPointsLine from './getPointsLine'
  * @param {boolean} [inclusive=true] - Choose whether to include or exclude the start and end points in the results.
  * @returns {Object.<string, Array.<module:matrixObjects~Point>>}
  */
-const testPointsBetween = (start, end, matrix, func, inclusive = true) =>
-  getPointsLine(start, end).filter(
-    (prop, i, line) => ((i !== 0 && i !== line.length - 1) || inclusive)
-  ).reduce(
-    (newPoints, next) => siFunciona.mergeObjects(
-      newPoints,
-      { [`${func(next, matrix)}`]: [next] }
-    ),
-    { true: [], false: [] }
-  )
+const testPointsBetween = (start, end, matrix, func, inclusive = true) => getPointsLine(start, end).filter(
+  (prop, i, line) => ((i !== 0 && i !== line.length - 1) || inclusive)
+).reduce(
+  (newPoints, next) => {
+    newPoints[`${func(next, matrix)}`].push(next)
+    return newPoints
+  },
+  { true: [], false: [] }
+)
 
 export default testPointsBetween

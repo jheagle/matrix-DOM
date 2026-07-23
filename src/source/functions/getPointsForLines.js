@@ -1,5 +1,5 @@
 import 'core-js/stable'
-import getPointsLine from './getPointsLine'
+import getLinePoints from './getLinePoints.js'
 
 /**
  * Takes an array of arrays containing two points each. Calls getPointsLine for each array of points. Returns an
@@ -8,8 +8,8 @@ import getPointsLine from './getPointsLine'
  * @param {Array.<Array.<module:matrixObjects~Point>>} lines - An array of lines only containing start and end.
  * @returns {Array.<Array.<module:matrixObjects~Point>>}
  */
-const getPointsLines = lines => lines.reduce(
-  (pointsArray, line) => pointsArray.concat(getPointsLine(...line)),
+const getPointsForLines = lines => lines.reduce(
+  (pointsArray, line) => pointsArray.concat(getLinePoints(...line)),
   []
 )
 
