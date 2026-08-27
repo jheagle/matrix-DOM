@@ -1,5 +1,5 @@
 import 'core-js/stable'
-import getPointsLines from './getPointsLines'
+import getPointsForLines from './getPointsForLines'
 import point from '../objects/point'
 import nextCell from './nextCell'
 import checkValidPoint from './checkValidPoint'
@@ -12,7 +12,7 @@ import { logObject } from 'test-filesystem'
  * @param {module:matrixObjects~Matrix} matrix - The matrix having the point.
  * @returns {Array.<module:matrixObjects~Point>}
  */
-const adjacentPoints = (pnt, matrix) => getPointsLines([
+const adjacentPoints = (pnt, matrix) => getPointsForLines([
   [point(-1, -1, -1), point(-1, 1, -1)],
   [point(0, -1, -1), point(0, 1, -1)],
   [point(1, -1, -1), point(1, 1, -1)],

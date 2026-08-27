@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import areEqualPoints from './areEqualPoints.js'
 import point from '../objects/point.js'
 

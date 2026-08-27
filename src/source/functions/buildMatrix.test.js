@@ -9,6 +9,17 @@ describe('buildMatrix', () => {
     expect(grid.children.length).toBe(1)
     expect(grid.children[0].children.length).toBe(0)
   })
+  test('will have parentItem references', () => {
+    const grid = buildMatrix({x:1, y:1, z:1})
+    const layer = grid.children[0]
+    const row = layer.children[0]
+    const column = row.children[0]
+    expect(column.point).toEqual({ x: 0, y: 0, z: 0 })
+    expect(column.parentItem).toBe(row)
+    expect(row.parentItem).toBe(layer)
+    expect(layer.parentItem).toBe(grid)
+    expect(grid.parentItem).toBeNull()
+  })
 
   // test set matrix with dimensions of 2x2x2
   test('set matrix with dimensions of 2x2x2 and points are assigned', () => {

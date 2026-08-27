@@ -13,4 +13,4 @@ const getPointsForLines = lines => lines.reduce(
   []
 )
 
-export default getPointsLines
+export default getPointsForLines

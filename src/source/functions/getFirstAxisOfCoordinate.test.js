@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import getFirstAxisOfCoordinate from './getFirstAxisOfCoordinate.js'
 import point from '../objects/point.js'
 

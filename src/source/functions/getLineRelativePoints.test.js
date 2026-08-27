@@ -1,6 +1,5 @@
 import point from '../objects/point.js'
 import getLineRelativePoints from './getLineRelativePoints.js'
-import { logObject } from 'test-filesystem'
 
 describe('getLineRelativePoints', () => {
   test('returns an array of points from 0,0,0 to 0,0,3', () => {

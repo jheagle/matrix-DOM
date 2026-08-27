@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import getHighestAbsoluteCoordinate from './getHighestAbsoluteCoordinate.js'
 import point from '../objects/point.js'
 

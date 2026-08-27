@@ -5,8 +5,6 @@ import testPointsBetween from './testPointsBetween.js'
 import getDomItemFromPoint from './getDomItemFromPoint.js'
 import point from '../objects/point.js'
 import buildMatrix from './buildMatrix.js'
-import { logObject } from 'test-filesystem'
-import getPointsLine from './getPointsLine.js'
 
 const validClass = 'valid-item'
 const testFn = (pn, m) => getDomItemFromPoint(pn, m).attributes.className.includes(validClass)
@@ -69,20 +67,14 @@ describe('testPointsBetween', () => {
 
     test('checks points win diagonal with start and end excluded', () => {
         const matrix = buildMatrix({ x: 7, y: 5, z: 3 })
-        matrix.children[0].children[2].children[4].attributes.className += ` ${validClass}`
+        matrix.children[1].children[2].children[3].attributes.className += ` ${validClass}`
         const results = testPointsBetween(point(0, 0, 0), point(6, 4, 2), matrix, testFn, false)
-        expect(results.true).toEqual([{x:4,y:2,z:0}])
+        expect(results.true).toEqual([{x:3,y:2,z:1}])
         expect(results.false).toEqual([
-            {x:1,y:0,z:0},
-            {x:2,y:0,z:0},
-            {x:3,y:0,z:0},
-            {x:3,y:1,z:0},
-            {x:4,y:1,z:0},
-            {x:5,y:2,z:0},
-            {x:5,y:3,z:0},
-            {x:5,y:3,z:1},
-            {x:6,y:3,z:1},
-            {x:6,y:4,z:1}
+            {x:1,y:1,z:0},
+            {x:2,y:1,z:1},
+            {x:4,y:3,z:1},
+            {x:5,y:3,z:2}
         ])
     })
 })

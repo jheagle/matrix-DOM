@@ -8,6 +8,9 @@ import point from '../objects/point'
  * @returns {module:matrixObjects~Point}
  */
 const getPointFromDomItem = (domItem, useIfExists = true) => {
+  if (typeof domItem?.parentItem?.parentItem?.parentItem?.children === 'undefined') {
+    throw Error('Invalid DomItem or not a DomItem representing a matrix point.')
+  }
   if (useIfExists && domItem.point) {
     return domItem.point
   }

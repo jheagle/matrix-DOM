@@ -1,6 +1,6 @@
 import 'core-js/stable'
 import siFunciona from 'si-funciona'
-import getPointsLine from './getPointsLine'
+import getLinePoints from './getLinePoints'
 
 /**
  * Function that produces a property of the new Object, taking three arguments
@@ -21,7 +21,7 @@ import getPointsLine from './getPointsLine'
  * @param {boolean} [inclusive=true] - Choose whether to include or exclude the start and end points in the results.
  * @returns {Object.<string, Array.<module:matrixObjects~Point>>}
  */
-const testPointsBetween = (start, end, matrix, func, inclusive = true) => getPointsLine(start, end).filter(
+const testPointsBetween = (start, end, matrix, func, inclusive = true) => getLinePoints(start, end).filter(
   (prop, i, line) => ((i !== 0 && i !== line.length - 1) || inclusive)
 ).reduce(
   (newPoints, next) => {

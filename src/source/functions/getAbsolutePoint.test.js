@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import getAbsolutePoint from './getAbsolutePoint.js'
 import point from '../objects/point.js'
 

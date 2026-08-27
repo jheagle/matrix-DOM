@@ -1,5 +1,7 @@
 import matrix from '../objects/matrix.js'
 import updateMatrixPoints from './updateMatrixPoints.js'
+import jsonDom from 'json-dom'
+import siFunciona from 'si-funciona'
 
 /**
  * Create the matrix and assign the correct points to each tile.
@@ -18,6 +20,9 @@ import updateMatrixPoints from './updateMatrixPoints.js'
 const buildMatrix = (
   dimensions = { x: 0, y: 0, z: 1 },
   props = { x: [], y: [], z: [], matrix: [] }
-) => updateMatrixPoints(matrix(dimensions, props))
+) => siFunciona.pipe(
+  jsonDom.setParentItemReferences,
+  updateMatrixPoints
+)(matrix(dimensions, props))
 
 export default buildMatrix

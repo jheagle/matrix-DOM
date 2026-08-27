@@ -3,7 +3,6 @@
  */
 import point from '../objects/point.js'
 import getPointsForLines from './getPointsForLines.js'
-import { logObject } from 'test-filesystem'
 
 describe('getPointsLines', () => {
   test('takes several point arrays and returns points for all lines', () => {
