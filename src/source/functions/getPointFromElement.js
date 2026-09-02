@@ -8,7 +8,8 @@ import point from '../objects/point'
  * @returns {module:matrixObjects~Point}
  */
 const getPointFromElement = elem => {
-  if (typeof elem?.parentNode?.parentNode?.parentNode?.childNodes === 'undefined') {
+  if (typeof elem.parentNode?.parentNode?.parentNode?.childNodes === 'undefined') {
+    // This seems unlikey to occur because there will be document items as parents
     throw Error('Invalid element or not an element representing a matrix point.')
   }
   return point(

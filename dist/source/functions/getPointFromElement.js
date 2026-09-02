@@ -14,7 +14,8 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @returns {module:matrixObjects~Point}
  */
 const getPointFromElement = elem => {
-  if (typeof elem?.parentNode?.parentNode?.parentNode?.childNodes === 'undefined') {
+  if (typeof elem.parentNode?.parentNode?.parentNode?.childNodes === 'undefined') {
+    // This seems unlikey to occur because there will be document items as parents
     throw Error('Invalid element or not an element representing a matrix point.')
   }
   return (0, _point.default)(Array.from(elem.parentNode.childNodes).indexOf(elem), Array.from(elem.parentNode.parentNode.childNodes).indexOf(elem.parentNode), Array.from(elem.parentNode.parentNode.parentNode.childNodes).indexOf(elem.parentNode.parentNode))

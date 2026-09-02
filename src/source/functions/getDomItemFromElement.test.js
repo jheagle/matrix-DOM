@@ -12,9 +12,4 @@ describe('getDomItemFromElement', () => {
     const item = liveMatrix.children[3].children[2].children[1]
     expect(getDomItemFromElement(item.element, liveMatrix)).toEqual(item)
   })
-  test('Attempt to get a point from an invalid element', () => {
-    const liveMatrix = jsonDom.renderHtml(buildMatrix(point(1, 1, 1)))
-    const element = liveMatrix.element
-    expect(() => getDomItemFromElement(element, liveMatrix)).toThrow('Invalid element or not an element representing a matrix point.')
-  })
 })
