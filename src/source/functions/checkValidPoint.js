@@ -14,9 +14,9 @@ const checkValidPoint = (pnt, matrix) => {
     return false
   }
   return !!matrix.children[pnt.z] &&
-  !!matrix.children[pnt.z].children[pnt.y] &&
-  !!matrix.children[pnt.z].children[pnt.y].children[pnt.x] &&
-  !!matrix.children[pnt.z].children[pnt.y].children[pnt.x].point
+    !!matrix.children[pnt.z].children[pnt.y] &&
+    !!matrix.children[pnt.z].children[pnt.y].children[pnt.x] &&
+    !!matrix.children[pnt.z].children[pnt.y].children[pnt.x].point
 }
 
 export default checkValidPoint

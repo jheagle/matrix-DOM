@@ -6,7 +6,7 @@ import getAllPoints from './getAllPoints.js'
 
 describe('getAllPoints', () => {
   test('retrieves all the points in the matrix', () => {
-    const matrix = buildMatrix({x:3, y:3, z:3})
+    const matrix = buildMatrix({ x: 3, y: 3, z: 3 })
     const result = getAllPoints(matrix)
     expect(result).toHaveLength(27)
     expect(result).toEqual([

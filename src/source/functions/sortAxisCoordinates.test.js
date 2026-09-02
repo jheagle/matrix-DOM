@@ -1,6 +1,5 @@
 import sortAxisCoordinates from './sortAxisCoordinates.js'
 import point from '../objects/point.js'
-import { logObject } from 'test-filesystem'
 
 describe('sortAxisCoordinates', () => {
     test('sorts with high-low x,y,z', () => {

@@ -1,6 +1,7 @@
 import 'core-js/stable'
 import siFunciona from 'si-funciona'
-import getAvailableRanges from './getAvailableRanges.js'
+import getCoordinateRanges from './getCoordinateRanges.js'
+import getMatrixRange from './getMatrixRange.js'
 import point from '../objects/point.js'
 
 /**
@@ -11,7 +12,8 @@ import point from '../objects/point.js'
  * @returns {module:matrixObjects~Direction}
  */
 const randPoint = (matrix, maxRanges = null) => {
-  const coordinateRanges = getAvailableRanges(matrix, maxRanges)
+  const [minPoint, maxPoint] = getMatrixRange(matrix)
+  const coordinateRanges = getCoordinateRanges(minPoint, maxPoint, maxRanges)
   return point(
     siFunciona.randomInteger(coordinateRanges.x, minPoint.x),
     siFunciona.randomInteger(coordinateRanges.y, minPoint.y),

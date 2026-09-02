@@ -1,7 +1,12 @@
 import 'core-js/stable'
 import siFunciona from 'si-funciona'
-import point from '../objects/point.js'
-import randDirection from './randDirection.js'
+import alterCoordinates from './alterCoordinates.js'
+import getCoordinateRanges from './getCoordinateRanges.js'
+import getHighestAbsoluteCoordinate from './getHighestAbsoluteCoordinate.js'
+import getMatrixRange from './getMatrixRange.js'
+import nextCell from './nextCell.js'
+import randomPoint from './randomPoint.js'
+import randDirectionWithInterval from './randDirectionWithInterval.js'
 
 /**
  * Generate a random starting point for a line with the provided length and direction.
@@ -13,21 +18,39 @@ import randDirection from './randDirection.js'
  * @returns {module:matrixObjects~Point}
  */
 const randomStart = (matrix, length = null, dir = null, maxRanges = null) => {
+  const [minPoint, maxPoint] = getMatrixRange(matrix)
+  maxRanges = getCoordinateRanges(minPoint, maxPoint, maxRanges)
   if (length === null) {
-    length = siFunciona.randomInteger(1, Math.min(matrix.length.x, matrix.length.y, matrix.length.z))
+    const highestCoordinate = getHighestAbsoluteCoordinate(maxRanges)
+    // length must be at least 1, and less than the highest coordinate in the matrix
+    length = siFunciona.randomInteger(highestCoordinate - 2, 1)
   }
   if (dir === null) {
-    dir = randDirection(matrix, null, length, maxRanges)
+    dir = randDirectionWithInterval(matrix, null, length, maxRanges)
   }
   // check direction has at least one non-zero component
   if (dir.x === 0 && dir.y === 0 && dir.z === 0) {
     throw new Error('Direction must have at least one non-zero coordinate')
   }
-  return point(
-    siFunciona.randomInteger(lengthLimits.x - ((length - 1) * dir.x)),
-    siFunciona.randomInteger(lengthLimits.y - ((length - 1) * dir.y)),
-    siFunciona.randomInteger(lengthLimits.z - ((length - 1) * dir.z))
-  )
+  const multipleToLength = alterCoordinates(dir, coordinate => {
+    if (length % coordinate !== 0) {
+      return null
+    }
+    return length / coordinate
+  })
+  const timesToLength = siFunciona.reduceObject(multipleToLength, (times, coordinate) => {
+    if (coordinate === null) {
+      return times
+    }
+    if (coordinate < times) {
+      return coordinate
+    }
+    return times
+  }, length)
+  for (let i = 0; i < timesToLength; ++i) {
+    maxRanges = dir.prev(maxRanges)
+  }
+  return nextCell(minPoint, randomPoint(matrix, maxRanges))
 }
 
 export default randomStart

@@ -1,9 +1,5 @@
-/**
- * @jest-environment jsdom
- */
 import prevCell from './prevCell.js'
 import point from '../objects/point.js'
-import matrix from '../objects/matrix.js'
 
 describe('prevCell', () => {
     test('should return the previous cell for a given point and offset', () => {

@@ -8,7 +8,6 @@ require('core-js/stable')
 var _siFunciona = _interopRequireDefault(require('si-funciona'))
 var _jsonDom = _interopRequireDefault(require('json-dom'))
 var _tile = _interopRequireDefault(require('./tile'))
-var _updateMatrixPoints = _interopRequireDefault(require('../functions/updateMatrixPoints.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * MatrixColumn is a DomItem which represents the x axis and also stores {@link module:matrixObjects~MatrixTile}
@@ -66,49 +65,45 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {Array.<module:matrixObjects~Matrix>} props.matrix - Additional properties to be added to the matrix
  * @returns {module:matrixObjects~Matrix}
  */
-const matrix = function () {
-  const dimensions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    x: 0,
-    y: 0,
-    z: 1
-  }
-  const props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
-    x: [],
-    y: [],
-    z: [],
-    matrix: []
-  }
-  return _siFunciona.default.mergeObjects(_jsonDom.default.createDomItem({
-    is: 'matrix',
+const matrix = (dimensions = {
+  x: 0,
+  y: 0,
+  z: 1
+}, props = {
+  x: [],
+  y: [],
+  z: [],
+  matrix: []
+}) => _siFunciona.default.mergeObjects(_jsonDom.default.createDomItem({
+  is: 'matrix',
+  tagName: 'div',
+  attributes: {
+    className: 'matrix'
+  },
+  children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable(_jsonDom.default.createDomItem({
+    axis: 'z',
+    is: 'layer',
     tagName: 'div',
     attributes: {
-      className: 'matrix'
+      className: 'layer'
     },
     children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable(_jsonDom.default.createDomItem({
-      axis: 'z',
-      is: 'layer',
+      axis: 'y',
+      is: 'row',
       tagName: 'div',
       attributes: {
-        className: 'layer'
+        className: 'row'
       },
       children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable(_jsonDom.default.createDomItem({
-        axis: 'y',
-        is: 'row',
+        axis: 'x',
+        is: 'column',
         tagName: 'div',
         attributes: {
-          className: 'row'
+          className: 'column'
         },
-        children: _siFunciona.default.buildArray(_siFunciona.default.mergeObjectsMutable(_jsonDom.default.createDomItem({
-          axis: 'x',
-          is: 'column',
-          tagName: 'div',
-          attributes: {
-            className: 'column'
-          },
-          children: []
-        }), (0, _tile.default)(), props.x), dimensions.x)
-      }), props.y), dimensions.y)
-    }), props.z), dimensions.z)
-  }), props.matrix)
-}
+        children: []
+      }), (0, _tile.default)(), props.x), dimensions.x)
+    }), props.y), dimensions.y)
+  }), props.z), dimensions.z)
+}), props.matrix)
 var _default = exports.default = matrix

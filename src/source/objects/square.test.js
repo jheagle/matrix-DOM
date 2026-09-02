@@ -11,4 +11,3 @@ describe('square', () => {
     expect(grid.children[0].children[0].children.length).toBe(10)
   })
 })
- 

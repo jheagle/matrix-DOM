@@ -30,7 +30,7 @@ const getLineRelativePoints = (start, end, line = []) => {
 
   // Use the sorted coordinates to determine the priority of updating each coordinate
   const [highest, middle, lowest] = sortAxisCoordinate(getAbsolutePoint(simplifiedDirection), 'desc')
-  
+
   // The error range adustment for each cycle
   const incrementMid = 2 * middle.coordinate
   const incrementLow = 2 * lowest.coordinate

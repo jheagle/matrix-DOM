@@ -40,7 +40,7 @@ describe('lineEndPoint', () => {
   test('get the correct end point negative diagonal x,y,z', () => {
     const start = point(4, 4, 0)
     const length = 5
-    const dir = point(-1,-1, 1)
+    const dir = point(-1, -1, 1)
     const endPoint = lineEndPoint(start, length, dir)
     expect(endPoint).toEqual(point(0, 0, 4))
   })

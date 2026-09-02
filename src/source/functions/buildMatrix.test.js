@@ -10,7 +10,7 @@ describe('buildMatrix', () => {
     expect(grid.children[0].children.length).toBe(0)
   })
   test('will have parentItem references', () => {
-    const grid = buildMatrix({x:1, y:1, z:1})
+    const grid = buildMatrix({ x: 1, y: 1, z: 1 })
     const layer = grid.children[0]
     const row = layer.children[0]
     const column = row.children[0]

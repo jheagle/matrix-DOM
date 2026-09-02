@@ -1,5 +1,4 @@
 import 'core-js/stable'
-import siFunciona from 'si-funciona'
 import getLinePoints from './getLinePoints'
 
 /**

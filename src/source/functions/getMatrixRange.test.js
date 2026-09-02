@@ -6,7 +6,7 @@ import getMatrixRange from './getMatrixRange.js'
 
 describe('getMatrixRange', () => {
     test('retrieves the lowest and highest points in the matrix', () => {
-        const matrix = buildMatrix({x:3, y:3, z:3})
+        const matrix = buildMatrix({ x: 3, y: 3, z: 3 })
         const result = getMatrixRange(matrix)
         expect(result).toHaveLength(2)
         const [lowest, highest] = result
@@ -14,7 +14,7 @@ describe('getMatrixRange', () => {
         expect(highest).toEqual({ x: 2, y: 2, z: 2 })
     })
     test('retrieves the lowest and highest points in a non-cubical matrix', () => {
-        const matrix = buildMatrix({x:2, y:3, z:4})
+        const matrix = buildMatrix({ x: 2, y: 3, z: 4 })
         const result = getMatrixRange(matrix)
         expect(result).toHaveLength(2)
         const [lowest, highest] = result
