@@ -48,8 +48,7 @@ Use JSON-DOM to generate grids that can be rendered in the DOM.
 and / or false properties based on the test.</p>
 </dd>
 <dt><a href="#testIntervalFits">testIntervalFits(matrix, [interval], [maxRanges])</a> ⇒ <code>module:matrixObjects~IntervalFits</code></dt>
-<dd><p>Get random direction point.
-NOTE: It is possible that the direction is 0,0,0 indicating no move.</p>
+<dd><p>Check each axis of the matrix to see if a length interval would fit within.</p>
 </dd>
 <dt><a href="#sortAxisCoordinates">sortAxisCoordinates(pnt, direction)</a> ⇒ <code><a href="#module_matrixObjects..axisCoordinatePairs">axisCoordinatePairs</a></code></dt>
 <dd><p>Take a point and sort the coordinates, return an array of them sorted.</p>
@@ -168,7 +167,8 @@ When inclusive is set to true the provided start and end points will also be tes
 
 <dl>
 <dt><a href="#IntervalFits">IntervalFits</a> : <code>Object</code></dt>
-<dd></dd>
+<dd><p>An object that has boolean values for each axis indicating whether the interval fits within the matrix.</p>
+</dd>
 <dt><a href="#alterCoordinate">alterCoordinate</a> ⇒ <code><a href="#module_matrixObjects..coordinate">coordinate</a></code> | <code>null</code></dt>
 <dd></dd>
 </dl>
@@ -500,7 +500,7 @@ Given a start and end point, test the points between with the provided function.
 <a name="testIntervalFits"></a>
 
 ## testIntervalFits(matrix, [interval], [maxRanges]) ⇒ <code>module:matrixObjects~IntervalFits</code>
-Get random direction point.NOTE: It is possible that the direction is 0,0,0 indicating no move.
+Check each axis of the matrix to see if a length interval would fit within.
 
 **Kind**: global function  
 
@@ -948,6 +948,8 @@ Return all points which touch on edges (not diagonal)
 <a name="IntervalFits"></a>
 
 ## IntervalFits : <code>Object</code>
+An object that has boolean values for each axis indicating whether the interval fits within the matrix.
+
 **Kind**: global typedef  
 **Properties**
 

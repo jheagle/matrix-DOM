@@ -17,7 +17,8 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {Array.<module:matrixObjects~Point>} line
  * @returns {Array.<module:matrixObjects~Point>}
  */
-const nextIntersect = (direction, start, end, line = []) => {
+const nextIntersect = function (direction, start, end) {
+  const line = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : []
   line.push(start)
   return (0, _areEqualPoints.default)(start, end) ? line : nextIntersect(direction, direction.next(start), end, line)
 }
@@ -31,7 +32,8 @@ const nextIntersect = (direction, start, end, line = []) => {
  * @param {Array.<module:matrixObjects~Point>} [line=[]] - The resulting line to connect start and end.
  * @returns {Array.<module:matrixObjects~Point>}
  */
-const getLineIntersectPoints = (start, end, line = []) => {
+const getLineIntersectPoints = function (start, end) {
+  const line = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : []
   if ((0, _areEqualPoints.default)(start, end)) {
     return line.concat([start])
   }

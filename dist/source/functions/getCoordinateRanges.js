@@ -17,7 +17,8 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {module:matrixObjects~Point|null} maxRanges - The maximum ranges for the point. If null, the matrix will be used.
  * @returns {module:matrixObjects~Direction}
  */
-const getCoordinateRanges = (minPoint, maxPoint, maxRanges = null) => {
+const getCoordinateRanges = function (minPoint, maxPoint) {
+  const maxRanges = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null
   // Find the range by getting delta of min and max, then add 1 to each access to included the max point in the range
   const coordinateRanges = (0, _nextCell.default)((0, _pointDifference.default)(minPoint, maxPoint), (0, _point.default)(1, 1, 1))
   if (maxRanges) {

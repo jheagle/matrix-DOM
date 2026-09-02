@@ -22,5 +22,8 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {module:matrixFunctions~alterCoordinate} fn
  * @returns {module:matrixObjects~Point}
  */
-const alterCoordinates = (pnt, fn) => (0, _point.default)(fn(pnt?.x ?? null, 'x', pnt), fn(pnt?.y ?? null, 'y', pnt), fn(pnt?.z ?? null, 'z', pnt))
+const alterCoordinates = (pnt, fn) => {
+  var _pnt$x, _pnt$y, _pnt$z
+  return (0, _point.default)(fn((_pnt$x = pnt === null || pnt === void 0 ? void 0 : pnt.x) !== null && _pnt$x !== void 0 ? _pnt$x : null, 'x', pnt), fn((_pnt$y = pnt === null || pnt === void 0 ? void 0 : pnt.y) !== null && _pnt$y !== void 0 ? _pnt$y : null, 'y', pnt), fn((_pnt$z = pnt === null || pnt === void 0 ? void 0 : pnt.z) !== null && _pnt$z !== void 0 ? _pnt$z : null, 'z', pnt))
+}
 var _default = exports.default = alterCoordinates

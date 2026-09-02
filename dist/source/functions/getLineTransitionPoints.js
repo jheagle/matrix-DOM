@@ -20,7 +20,9 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {Array.<module:matrixObjects~Point>} [line=[]] - The resulting line to connect start and end.
  * @returns {Array.<module:matrixObjects~Point>}
  */
-const getLineTransitionPoints = (start, end, line = [], transitions = null) => {
+const getLineTransitionPoints = function (start, end) {
+  const line = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : []
+  let transitions = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null
   if ((0, _areEqualPoints.default)(start, end)) {
     return [start]
   }

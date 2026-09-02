@@ -18,7 +18,9 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {Array.<Array.<module:matrixObjects~Point>>} [lines=[]] - An array of lines only containing start and end.
  * @returns {Array.<Array.<module:matrixObjects~Point>>}
  */
-const getLinePoints = (start, end, type = 'relative', line = []) => {
+const getLinePoints = function (start, end) {
+  const type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'relative'
+  const line = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : []
   switch (type) {
     case 'relative':
       return (0, _getLineRelativePoints.default)(start, end, line)
@@ -27,7 +29,7 @@ const getLinePoints = (start, end, type = 'relative', line = []) => {
     case 'transition':
       return (0, _getLineTransitionPoints.default)(start, end, line)
     default:
-      throw Error(`The given type: '${type}' is invalid. Valid types are 'relative', 'intersect', 'transition'`)
+      throw Error("The given type: '".concat(type, "' is invalid. Valid types are 'relative', 'intersect', 'transition'"))
   }
 }
 var _default = exports.default = getLinePoints

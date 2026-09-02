@@ -13,8 +13,10 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {boolean} useIfExists - Whether to use the existing point if it exists.
  * @returns {module:matrixObjects~Point}
  */
-const getPointFromDomItem = (domItem, useIfExists = true) => {
-  if (typeof domItem?.parentItem?.parentItem?.parentItem?.children === 'undefined') {
+const getPointFromDomItem = function (domItem) {
+  var _domItem$parentItem
+  const useIfExists = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true
+  if (typeof (domItem === null || domItem === void 0 || (_domItem$parentItem = domItem.parentItem) === null || _domItem$parentItem === void 0 || (_domItem$parentItem = _domItem$parentItem.parentItem) === null || _domItem$parentItem === void 0 || (_domItem$parentItem = _domItem$parentItem.parentItem) === null || _domItem$parentItem === void 0 ? void 0 : _domItem$parentItem.children) === 'undefined') {
     throw Error('Invalid DomItem or not a DomItem representing a matrix point.')
   }
   if (useIfExists && domItem.point) {

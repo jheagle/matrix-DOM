@@ -4,6 +4,7 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
+require('core-js/modules/web.dom-collections.iterator.js')
 require('core-js/stable')
 var _point = _interopRequireDefault(require('./point.js'))
 var _nextCell = _interopRequireDefault(require('../functions/nextCell.js'))
@@ -27,7 +28,8 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {number} z
  * @returns {module:matrixObjects~Direction}
  */
-const direction = (x, y, z = 0) => {
+const direction = function (x, y) {
+  const z = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0
   const simplifiedCoordinates = _siFunciona.default.simplestRatio(x, y, z)
   const dir = (0, _point.default)(...simplifiedCoordinates)
   dir.next = start => (0, _nextCell.default)(start, dir)

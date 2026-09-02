@@ -4,6 +4,7 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
+require('core-js/modules/web.dom-collections.iterator.js')
 require('core-js/stable')
 var _areEqualPoints = _interopRequireDefault(require('./areEqualPoints.js'))
 var _direction = _interopRequireDefault(require('../objects/direction.js'))

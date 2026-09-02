@@ -3,6 +3,7 @@ import getCoordinateRanges from './getCoordinateRanges.js'
 import getMatrixRange from './getMatrixRange.js'
 
 /**
+ * An object that has boolean values for each axis indicating whether the interval fits within the matrix.
  * @typedef {Object} IntervalFits
  * @property {boolean} x - Whether the interval fits within the x-axis of the matrix
  * @property {boolean} y - Whether the interval fits within the y-axis of the matrix
@@ -10,8 +11,7 @@ import getMatrixRange from './getMatrixRange.js'
  */
 
 /**
- * Get random direction point.
- * NOTE: It is possible that the direction is 0,0,0 indicating no move.
+ * Check each axis of the matrix to see if a length interval would fit within.
  * @function
  * @param {module:matrixObjects~Matrix} matrix - The matrix that the point will be contained within.
  * @param {number|null} [interval=null] - An interval where a line would intersect in the direction, null for unspecified

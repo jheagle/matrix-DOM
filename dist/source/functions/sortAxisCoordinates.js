@@ -4,6 +4,7 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
+require('core-js/modules/es.array.sort.js')
 require('core-js/stable')
 /**
  * An object for an axis-coordinate pair
@@ -24,7 +25,8 @@ require('core-js/stable')
  * @param {string} direction - 'asc'|'desc'
  * @returns {module:matrixObjects~axisCoordinatePairs}
  */
-const sortAxisCoordinates = (pnt, direction = 'desc') => {
+const sortAxisCoordinates = function (pnt) {
+  const direction = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'desc'
   const sortFn = direction === 'desc' ? (a, b) => b.coordinate - a.coordinate : (a, b) => a.coordinate - b.coordinate
   const axisCoordinatePairs = [{
     axis: 'x',

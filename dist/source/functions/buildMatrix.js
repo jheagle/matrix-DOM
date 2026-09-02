@@ -23,14 +23,18 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {Array.<module:matrixObjects~Matrix>} props.matrix - Additional properties to be added to the matrix
  * @returns {module:matrixObjects~Matrix}
  */
-const buildMatrix = (dimensions = {
-  x: 0,
-  y: 0,
-  z: 1
-}, props = {
-  x: [],
-  y: [],
-  z: [],
-  matrix: []
-}) => _siFunciona.default.pipe(_jsonDom.default.setParentItemReferences, _updateMatrixPoints.default)((0, _matrix.default)(dimensions, props))
+const buildMatrix = function () {
+  const dimensions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    x: 0,
+    y: 0,
+    z: 1
+  }
+  const props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    x: [],
+    y: [],
+    z: [],
+    matrix: []
+  }
+  return _siFunciona.default.pipe(_jsonDom.default.setParentItemReferences, _updateMatrixPoints.default)((0, _matrix.default)(dimensions, props))
+}
 var _default = exports.default = buildMatrix

@@ -18,19 +18,26 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {number} size - Used to define height, width, and depth as equal values
  * @returns {module:matrixObjects~Matrix}
  */
-const cube = ({
-  x = [],
-  y = [],
-  z = [],
-  matrix = []
-} = {}, size) => (0, _buildMatrix.default)({
-  x: size,
-  y: size,
-  z: size
-}, {
-  x: x,
-  y: y,
-  z: z,
-  matrix: matrix
-})
+const cube = function () {
+  const _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}
+  const _ref$x = _ref.x
+  const x = _ref$x === void 0 ? [] : _ref$x
+  const _ref$y = _ref.y
+  const y = _ref$y === void 0 ? [] : _ref$y
+  const _ref$z = _ref.z
+  const z = _ref$z === void 0 ? [] : _ref$z
+  const _ref$matrix = _ref.matrix
+  const matrix = _ref$matrix === void 0 ? [] : _ref$matrix
+  const size = arguments.length > 1 ? arguments[1] : undefined
+  return (0, _buildMatrix.default)({
+    x: size,
+    y: size,
+    z: size
+  }, {
+    x: x,
+    y: y,
+    z: z,
+    matrix: matrix
+  })
+}
 var _default = exports.default = cube

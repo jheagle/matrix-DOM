@@ -15,5 +15,8 @@ require('core-js/stable')
  * @param {Array.<module:matrixObjects~Point>} [allPoints=[]] - The array of points to be returned
  * @returns {Array.<module:matrixObjects~Point>}
  */
-const getAllPoints = (matrix, allPoints = []) => matrix.point ? allPoints.concat([matrix.point]) : matrix.children.reduce((allPoints, child) => allPoints.concat(getAllPoints(child, [])), [])
+const getAllPoints = function (matrix) {
+  const allPoints = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : []
+  return matrix.point ? allPoints.concat([matrix.point]) : matrix.children.reduce((allPoints, child) => allPoints.concat(getAllPoints(child, [])), [])
+}
 var _default = exports.default = getAllPoints
