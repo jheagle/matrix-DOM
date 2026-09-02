@@ -19,14 +19,11 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {module:matrixObjects~Point} pnt - A point to be added to a specific Matrix Column
  * @returns {module:matrixObjects~MatrixColumn|module:matrixObjects~MatrixRow}
  */
-const bindPointData = function (item) {
-  const pnt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : (0, _point.default)(0, 0, 0)
-  return _siFunciona.default.mergeObjects(item, item.point ? {
-    point: _siFunciona.default.cloneObject(pnt)
-  } : {
-    children: item.children.map((el, i) => bindPointData(el, Object.assign({}, pnt, {
-      [el.axis]: i
-    })))
-  })
-}
+const bindPointData = (item, pnt = (0, _point.default)(0, 0, 0)) => _siFunciona.default.mergeObjects(item, item.point ? {
+  point: _siFunciona.default.cloneObject(pnt)
+} : {
+  children: item.children.map((el, i) => bindPointData(el, Object.assign({}, pnt, {
+    [el.axis]: i
+  })))
+})
 var _default = exports.default = bindPointData

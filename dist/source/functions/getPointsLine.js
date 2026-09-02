@@ -18,8 +18,5 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {Array.<module:matrixObjects~Point>} [line=[]] - The resulting line to connect start and end.
  * @returns {Array.<module:matrixObjects~Point>}
  */
-const getPointsLine = function (start, end) {
-  const line = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : []
-  return (0, _areEqualPoints.default)(start, end) ? line.concat([start]) : getPointsLine((0, _nextCell.default)(start, (0, _pointsToDirection.default)(start, end)), end, line.concat([start]))
-}
+const getPointsLine = (start, end, line = []) => (0, _areEqualPoints.default)(start, end) ? line.concat([start]) : getPointsLine((0, _nextCell.default)(start, (0, _pointsToDirection.default)(start, end)), end, line.concat([start]))
 var _default = exports.default = getPointsLine

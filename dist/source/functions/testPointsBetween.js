@@ -30,13 +30,10 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {boolean} [inclusive=true] - Choose whether to include or exclude the start and end points in the results.
  * @returns {Object.<string, Array.<module:matrixObjects~Point>>}
  */
-const testPointsBetween = function (start, end, matrix, func) {
-  const inclusive = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true
-  return (0, _getPointsLine.default)(start, end).filter((prop, i, line) => i !== 0 && i !== line.length - 1 || inclusive).reduce((newPoints, next) => _siFunciona.default.mergeObjects(newPoints, {
-    [''.concat(func(next, matrix))]: [next]
-  }), {
-    true: [],
-    false: []
-  })
-}
+const testPointsBetween = (start, end, matrix, func, inclusive = true) => (0, _getPointsLine.default)(start, end).filter((prop, i, line) => i !== 0 && i !== line.length - 1 || inclusive).reduce((newPoints, next) => _siFunciona.default.mergeObjects(newPoints, {
+  [`${func(next, matrix)}`]: [next]
+}), {
+  true: [],
+  false: []
+})
 var _default = exports.default = testPointsBetween

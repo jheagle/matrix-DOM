@@ -43,12 +43,9 @@ require('core-js/stable')
  * {@link module:matrixObjects~Matrix})
  * @returns {module:matrixObjects~Point}
  */
-const point = function (x, y) {
-  const z = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0
-  return {
-    x: x,
-    y: y,
-    z: z
-  }
-}
+const point = (x, y, z = 0) => ({
+  x: x,
+  y: y,
+  z: z
+})
 var _default = exports.default = point

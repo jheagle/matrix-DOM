@@ -14,8 +14,5 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {Array.<module:matrixObjects~Point>} [useCoordinates=[]] - An array of possible directions.
  * @returns {module:matrixObjects~Direction}
  */
-const randDirection = function () {
-  const useCoordinates = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : []
-  return useCoordinates.length ? useCoordinates[_siFunciona.default.randomInteger(useCoordinates.length)] : (0, _point.default)(0, 0, 0)
-}
+const randDirection = (useCoordinates = []) => useCoordinates.length ? useCoordinates[_siFunciona.default.randomInteger(useCoordinates.length)] : (0, _point.default)(0, 0, 0)
 var _default = exports.default = randDirection

@@ -16,8 +16,5 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @param {module:matrixObjects~Point} [lengthLimits={x: 10, y: 10, z: 10}] - The maximum grid size.
  * @returns {module:matrixObjects~Point}
  */
-const randomStart = function (length, dir) {
-  const lengthLimits = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : (0, _point.default)(10, 10, 10)
-  return (0, _point.default)(_siFunciona.default.randomInteger(lengthLimits.x - (length - 1) * dir.x), _siFunciona.default.randomInteger(lengthLimits.y - (length - 1) * dir.y), _siFunciona.default.randomInteger(lengthLimits.z - (length - 1) * dir.z))
-}
+const randomStart = (length, dir, lengthLimits = (0, _point.default)(10, 10, 10)) => (0, _point.default)(_siFunciona.default.randomInteger(lengthLimits.x - (length - 1) * dir.x), _siFunciona.default.randomInteger(lengthLimits.y - (length - 1) * dir.y), _siFunciona.default.randomInteger(lengthLimits.z - (length - 1) * dir.z))
 var _default = exports.default = randomStart
