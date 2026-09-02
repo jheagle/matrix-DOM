@@ -1,8 +1,9 @@
 import 'core-js/stable'
-import getPointsLines from './getPointsLines'
+import getPointsForLines from './getPointsForLines'
 import point from '../objects/point'
 import nextCell from './nextCell'
 import checkValidPoint from './checkValidPoint'
+import { logObject } from 'test-filesystem'
 
 /**
  * Return all valid points surrounding a provided point
@@ -11,18 +12,21 @@ import checkValidPoint from './checkValidPoint'
  * @param {module:matrixObjects~Matrix} matrix - The matrix having the point.
  * @returns {Array.<module:matrixObjects~Point>}
  */
-const adjacentPoints = (pnt, matrix) => getPointsLines([
-  [point(-1, 1, 1), point(1, -1, -1)],
-  [point(1, 1, 1), point(-1, 1, -1)],
-  [point(-1, -1, 1), point(1, -1, 1)],
-  [point(1, 0, 0), point(1, 1, -1)],
-  [point(-1, 1, 0), point(1, 1, 0)]
-]).concat([
-  point(0, 0, 1),
-  point(1, 0, 0),
-  point(-1, 0, -1),
-  point(0, 0, -1)
-]).map(p => nextCell(pnt, p))
-  .filter(p => checkValidPoint(nextCell(pnt, p), matrix))
+const adjacentPoints = (pnt, matrix) => getPointsForLines([
+  [point(-1, -1, -1), point(-1, 1, -1)],
+  [point(0, -1, -1), point(0, 1, -1)],
+  [point(1, -1, -1), point(1, 1, -1)],
+  [point(-1, -1, 0), point(-1, 1, 0)],
+  [point(1, -1, 0), point(1, 1, 0)],
+  [point(-1, -1, 1), point(-1, 1, 1)],
+  [point(0, -1, 1), point(0, 1, 1)],
+  [point(1, -1, 1), point(1, 1, 1)],
+])
+  .concat([
+    point(0, -1, 0),
+    point(0, 1, 0),
+  ])
+  .map(p => nextCell(pnt, p))
+  .filter(p => checkValidPoint(p, matrix))
 
 export default adjacentPoints

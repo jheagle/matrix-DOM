@@ -6,6 +6,7 @@
  */
 import 'core-js/stable'
 import cube from './objects/cube'
+import direction from './objects/direction'
 import matrix from './objects/matrix'
 import point from './objects/point'
 import square from './objects/square'
@@ -13,6 +14,7 @@ import tile from './objects/tile'
 
 export default {
   cube,
+  direction,
   matrix,
   point,
   square,

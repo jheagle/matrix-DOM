@@ -7,7 +7,7 @@ import point from '../objects/point'
  * @param {module:matrixObjects~Matrix} matrix - The matrix to get the dimensions of.
  * @returns {module:matrixObjects~Point}
  */
-const getAxisLengths = (matrix) => point(
+const getAxisLengths = matrix => point(
   matrix.children[0].children[0].children.length,
   matrix.children[0].children.length,
   matrix.children.length

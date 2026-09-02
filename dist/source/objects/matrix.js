@@ -8,7 +8,6 @@ require('core-js/stable')
 var _siFunciona = _interopRequireDefault(require('si-funciona'))
 var _jsonDom = _interopRequireDefault(require('json-dom'))
 var _tile = _interopRequireDefault(require('./tile'))
-var _updateMatrixPoints = _interopRequireDefault(require('../functions/updateMatrixPoints.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * MatrixColumn is a DomItem which represents the x axis and also stores {@link module:matrixObjects~MatrixTile}
