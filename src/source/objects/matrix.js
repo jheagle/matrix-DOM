@@ -2,7 +2,6 @@ import 'core-js/stable'
 import siFunciona from 'si-funciona'
 import jsonDom from 'json-dom'
 import tile from './tile'
-import updateMatrixPoints from '../functions/updateMatrixPoints.js'
 
 /**
  * MatrixColumn is a DomItem which represents the x axis and also stores {@link module:matrixObjects~MatrixTile}

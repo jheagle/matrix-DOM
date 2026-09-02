@@ -8,8 +8,7 @@ require('core-js/modules/esnext.iterator.constructor.js')
 require('core-js/modules/esnext.iterator.filter.js')
 require('core-js/modules/esnext.iterator.reduce.js')
 require('core-js/stable')
-var _siFunciona = _interopRequireDefault(require('si-funciona'))
-var _getPointsLine = _interopRequireDefault(require('./getPointsLine'))
+var _getLinePoints = _interopRequireDefault(require('./getLinePoints'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Function that produces a property of the new Object, taking three arguments
@@ -32,9 +31,10 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  */
 const testPointsBetween = function (start, end, matrix, func) {
   const inclusive = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true
-  return (0, _getPointsLine.default)(start, end).filter((prop, i, line) => i !== 0 && i !== line.length - 1 || inclusive).reduce((newPoints, next) => _siFunciona.default.mergeObjects(newPoints, {
-    [''.concat(func(next, matrix))]: [next]
-  }), {
+  return (0, _getLinePoints.default)(start, end).filter((prop, i, line) => i !== 0 && i !== line.length - 1 || inclusive).reduce((newPoints, next) => {
+    newPoints[''.concat(func(next, matrix))].push(next)
+    return newPoints
+  }, {
     true: [],
     false: []
   })

@@ -1,5 +1,4 @@
 import 'core-js/stable'
-import point from './point.js'
 
 /**
  * MatrixTile is an Object which stores a reference a {@link Point} and can be populated with additionally associated

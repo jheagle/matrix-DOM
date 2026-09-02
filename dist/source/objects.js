@@ -6,6 +6,7 @@ Object.defineProperty(exports, '__esModule', {
 exports.default = void 0
 require('core-js/stable')
 var _cube = _interopRequireDefault(require('./objects/cube'))
+var _direction = _interopRequireDefault(require('./objects/direction'))
 var _matrix = _interopRequireDefault(require('./objects/matrix'))
 var _point = _interopRequireDefault(require('./objects/point'))
 var _square = _interopRequireDefault(require('./objects/square'))
@@ -19,6 +20,7 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  */
 var _default = exports.default = {
   cube: _cube.default,
+  direction: _direction.default,
   matrix: _matrix.default,
   point: _point.default,
   square: _square.default,

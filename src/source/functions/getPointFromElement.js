@@ -4,14 +4,18 @@ import point from '../objects/point'
 /**
  * Retrieve the point associated with the provided element.
  * @function
- * @param {Node|HTMLElement} elem - Provide an element associated with
- * a point.
+ * @param {Node|HTMLElement} elem - Provide an element associated with a point.
  * @returns {module:matrixObjects~Point}
  */
-const getPointFromElement = elem => point(
-  Array.from(elem.parentNode.childNodes).indexOf(elem),
-  Array.from(elem.parentNode.parentNode.childNodes).indexOf(elem.parentNode),
-  Array.from(elem.parentNode.parentNode.parentNode.childNodes).indexOf(elem.parentNode.parentNode)
-)
+const getPointFromElement = elem => {
+  if (typeof elem?.parentNode?.parentNode?.parentNode?.childNodes === 'undefined') {
+    throw Error('Invalid element or not an element representing a matrix point.')
+  }
+  return point(
+    Array.from(elem.parentNode.childNodes).indexOf(elem),
+    Array.from(elem.parentNode.parentNode.childNodes).indexOf(elem.parentNode),
+    Array.from(elem.parentNode.parentNode.parentNode.childNodes).indexOf(elem.parentNode.parentNode)
+  )
+}
 
 export default getPointFromElement
